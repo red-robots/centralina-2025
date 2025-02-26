@@ -1,0 +1,18 @@
+[data-name="slideImage"] .image-wrap img {
+  max-height: 85px!important;
+}
+.acf-field-repeater[data-name="ctas"] .acf-fields {
+  position: relative;
+  padding-left: 135px!important;
+}
+.acf-field-repeater[data-name="ctas"] [data-name="icon"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+}
+.acf-field-repeater[data-name="ctas"] .acf-image-uploader .image-wrap img[src$=".svg"],
+.acf-field-repeater[data-name="ctas"] .acf-image-uploader .image-wrap img {
+  min-height: 70px!important;
+  min-width: 70px!important;
+}
