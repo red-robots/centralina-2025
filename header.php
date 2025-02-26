@@ -66,7 +66,7 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
         <?php } ?>
         <button class="searchBtn">
           <span class="sr">Search</span>
-          <?xml version="1.0" encoding="UTF-8"?><svg viewBox="0 0 33.794 33.621" xmlns="http://www.w3.org/2000/svg"> <g transform="translate(-1824 -11)" fill="none" stroke="#fff" stroke-width="3" data-name="search icon"> <g transform="translate(1824 11)" data-name="Ellipse 1"> <circle cx="13.478" cy="13.478" r="13.478" stroke="none"/> <circle cx="13.478" cy="13.478" r="11.978" fill="none"/> </g> <line transform="translate(1846.7 33.5)" x2="9" y2="9" stroke-linecap="round" data-name="Line 1"/> </g> </svg>
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
         </nav>
       </div>
@@ -85,9 +85,9 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
         </nav>
       </div>
     </div>
+
+    <div class="MobileNavigation"></div>
 	</header>
-  
-  <?php get_template_part("parts/mobile-navigation"); ?>
 
   <?php get_template_part("parts/hero"); ?>
 
