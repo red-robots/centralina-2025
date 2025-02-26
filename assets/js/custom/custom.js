@@ -20,4 +20,44 @@ jQuery(document).ready(function ($) {
       $(this).parent().find('.collapsible-content').slideUp();
     });
   });
+
+
+  if( $('.slideshow').length ) {
+    $('.slideshow').each(function(){
+      if( typeof $(this).attr('id')!='undefined' && $(this).attr('id')!=null ) {
+        var slideId = '#' + $(this).attr('id');
+        do_slideshow(slideId);
+      }
+    });
+  }
+
+  /* Slideshow */
+  function do_slideshow(selector) {
+    var swiper = new Swiper(selector, {
+      effect: 'fade', /* "slide", "fade", "cube", "coverflow" or "flip" */
+      loop: true,
+      noSwiping: true,
+      simulateTouch : true,
+      speed: 1000,
+      autoplay: {
+        delay: 6000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      on: {
+        init: function () {
+          //console.log("swiper initialized");
+        },
+      }
+    });
+  }
+
+  
+
 }); 

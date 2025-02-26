@@ -7,7 +7,7 @@ get_header();
   
   <?php /* CTAS */ ?>
   <?php if ( $ctas = get_field('ctas') ) { ?>
-  <section class="ctas-section">
+  <section class="row1-section ctas-section">
     <div class="wrapper">
       <div class="infoCards">
       <?php foreach ($ctas as $cta) { 
@@ -46,6 +46,7 @@ get_header();
   </section>
   <?php } ?>
 
+  
   <?php /* MAKING DIFFERENCE */ ?>
   <?php  
   $row2_intro = get_field('row2_intro');
@@ -56,7 +57,7 @@ get_header();
   $row2_accordion = (isset($row2_data['accordion_items']) && $row2_data['accordion_items']) ? $row2_data['accordion_items'] : '';
   ?>
   <?php if ($row2_intro || $row2_accordion) { ?>
-  <section class="intro-section">
+  <section class="row2-section intro-section">
     <div class="wrapper">
       <div class="columns">
         <?php if ($row2_intro) { ?>
@@ -118,6 +119,52 @@ get_header();
           </div>
           <?php } ?>
         </div>
+        <?php } ?>
+      </div>
+    </div>
+  </section>
+  <?php } ?>
+
+
+  <?php /* Contact Your County */ ?>
+  <?php  
+  $row3_intro = get_field('row3_intro');
+  $row3_cards = get_field('row3_cards');
+  if($row3_intro) { ?>
+  <section class="row3-section">
+    <div class="wrapper">
+      <div class="inner">
+        <?php if ($row3_intro) { ?>
+        <div class="intro"><?php echo anti_email_spam($row3_intro); ?></div>  
+        <?php } ?>
+
+        <?php if ($row3_cards) { ?>
+        <div class="infoCards">
+          <?php foreach ($row3_cards as $c) { 
+            $title = $c['title'];
+            $text = $c['text'];
+            $bottom = $c['bottom'];
+            if($title || $text) { ?>
+            <div class="infoCard">
+              <div class="inside">
+                <div class="textwrap">
+                  <div class="top">
+                    <?php if ($title) { ?>
+                    <div class="infoTitle"><?php echo $title ?></div>  
+                    <?php } ?>
+                    <?php if ($text) { ?>
+                    <div class="infoText"><?php echo anti_email_spam($text); ?></div>  
+                    <?php } ?>
+                  </div>
+                  <?php if ($bottom) { ?>
+                  <div class="infoBottom"><?php echo $bottom ?></div>  
+                  <?php } ?>
+                </div>
+              </div>
+            </div>
+            <?php } ?>
+          <?php } ?>
+        </div>  
         <?php } ?>
       </div>
     </div>

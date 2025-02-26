@@ -6,10 +6,10 @@ function bellaworks_scripts() {
 	//wp_enqueue_style( 'bellaworks-style', get_stylesheet_uri() );
        
   wp_enqueue_style( 'swiper-style', 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css' );
-  wp_enqueue_style('bellaworks-style', get_stylesheet_directory_uri() .'/style.min.css', array(), '2.7' );  
+  wp_enqueue_style('bellaworks-style', get_stylesheet_directory_uri() .'/style.min.css', array(), '1.0' );  
 
   wp_deregister_script('jquery');
-  wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/jquery.min.js', false, '3.6.3', false);
+  wp_register_script('jquery', get_stylesheet_directory_uri() . '/assets/js/jquery.min.js', false, '3.7.1', false);
   wp_enqueue_script('jquery');
 
 	 wp_enqueue_script( 
@@ -33,14 +33,14 @@ function bellaworks_scripts() {
 
   wp_enqueue_script( 
     'swiper-bundle.min', 
-    get_template_directory_uri() . '/assets/js/vendor/swiper-bundle.min.js', 
+    'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', 
     array(), 'swiper-bundle.min', true 
   );
 
   wp_enqueue_script( 
     'bellaworks-custom', 
     get_template_directory_uri() . '/assets/js/custom/custom.js', 
-    array(), '20230808', true 
+    array(), '20250226', true 
   );
 
 	wp_localize_script( 'bellaworks-custom', 'frontajax', array(
