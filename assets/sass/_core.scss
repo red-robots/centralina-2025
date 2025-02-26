@@ -277,7 +277,7 @@ h6 { font-size: 13px; }
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-end;
-    ul {
+    ul.menu {
       margin: 0 0;
       padding: 0 0;
       list-style: none;
@@ -286,12 +286,12 @@ h6 { font-size: 13px; }
       display: inline-block;
       text-decoration: none;
     }
-    .menu {
+    .menu-main-container {
       background: rgba(0, 24, 20, .08);
       border: 1px solid #FFF;
       border-radius: 80px;
     }
-    .menu > ul {
+    .menu-main-container > ul.menu {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -299,10 +299,10 @@ h6 { font-size: 13px; }
       border-radius: 80px;
       margin: 0 -3px;
     }
-    .menu > ul > li {
+    ul.menu > li {
       margin: 0 2px;
     }
-    .menu > ul > li > a {
+    ul.menu > li > a {
       font-size: 20px;
       line-height: 1.2;
       color: #FFF;
@@ -330,20 +330,14 @@ h6 { font-size: 13px; }
       }
     }
 
-    .menu > ul > li:hover > a,
-    .menu > ul > li:focus-within > a {
+    ul.menu > li:hover > a,
+    ul.menu > li:focus-within > a {
       color: $color_primary;
       i {
         opacity: 1;
         box-shadow: 0 1px 15px rgba(0,0,0,.35);
       }
     }
-
-    // .menu > ul > li:first-child > a {
-    //   i {
-    //     opacity: 1;
-    //   }
-    // }
   }
 }
 

@@ -25,11 +25,11 @@ function bellaworks_scripts() {
   );
   
 
-  wp_enqueue_script( 
-    'bellaworks-cplugin', 
-    get_template_directory_uri() . '/assets/js/plugins.min.js', 
-    array(), '20220202', true 
-  );
+  // wp_enqueue_script( 
+  //   'bellaworks-cplugin', 
+  //   get_template_directory_uri() . '/assets/js/plugins.min.js', 
+  //   array(), '20220202', true 
+  // );
 
   wp_enqueue_script( 
     'swiper-bundle.min', 
