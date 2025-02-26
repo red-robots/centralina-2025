@@ -22,6 +22,9 @@ function my_login_logo() {
   $logo_url = ($logoImg) ? $logoImg[0] : '';
   if($custom_logo_id) { ?>
   <style type="text/css">
+    body.login {
+      background: #bcd5d8!important;
+    }
     body.login div#login h1 a {
       background-image: url(<?php echo $logo_url; ?>);
       background-size: contain;
@@ -42,12 +45,12 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 function loginpage_custom_link() {
   return get_site_url();
 }
-add_filter('login_headerurl','loginpage_custom_link');
+add_filter('login_headertext','loginpage_custom_link');
 
 function bella_login_logo_url_title() {
     return get_bloginfo('name');
 }
-add_filter( 'login_headertitle', 'bella_login_logo_url_title' );
+add_filter( 'login_headertext', 'bella_login_logo_url_title' );
 
 /*-------------------------------------
 	Adds Options page for ACF.
