@@ -126,7 +126,7 @@ get_header();
   <?php } ?>
 
 
-  <?php /* Contact Your County */ ?>
+  <?php /* CONTACT COUNTY */ ?>
   <?php  
   $row3_intro = get_field('row3_intro');
   $row3_cards = get_field('row3_cards');
@@ -170,6 +170,61 @@ get_header();
     </div>
   </section>
   <?php } ?>
+
+
+
+  <?php /* TAKE ACTION */ ?>
+  <?php  
+  $row4_title = get_field('row4_section_title');
+  $row4_columns = get_field('row4_columns');
+  if($row4_columns) { ?>
+  <section class="row4-section">
+    <div class="wrapper">
+      <?php if ($row4_title) { ?>
+      <div class="title-block">
+        <h2 class="section-title"><?php echo $row4_title ?></h2>
+      </div>  
+      <?php } ?>
+
+      <?php if ($row4_columns) { ?>
+      <div class="section-columns">
+        <?php foreach ($row4_columns as $sc) { 
+        $sc_icon = $sc['icon'];
+        $sc_title = $sc['title'];
+        $sc_text = $sc['text'];
+        $sc_btn = $sc['button'];
+        $sc_btnTitle = (isset($sc_btn['title']) && $sc_btn['title']) ? $sc_btn['title'] : '';
+        $sc_btnLink = (isset($sc_btn['url']) && $sc_btn['url']) ? $sc_btn['url'] : '';
+        $sc_btnTarget = (isset($sc_btn['target']) && $sc_btn['target']) ? $sc_btn['target'] : '_self';
+        if ($sc_title || $sc_text) {  ?>
+          <div class="infoCol">
+            <div class="inside">
+              <div class="top">
+                <?php if ($sc_icon) { ?>
+                <div class="infoIcon"><span style="background-image: url('<?php echo $sc_icon['url'] ?>');"></span></div>  
+                <?php } ?>
+                <?php if ($sc_title) { ?>
+                <div class="infoTitle"><span><?php echo $sc_title ?></span></div>  
+                <?php } ?>
+                <?php if ($sc_text) { ?>
+                <div class="infoText"><?php echo $sc_text ?></div>  
+                <?php } ?>
+              </div>
+              <?php if ($sc_btnTitle && $sc_btnLink) { ?>
+              <div class="infoButton">
+                <a href="<?php echo $sc_btnLink ?>" target="<?php echo $sc_btnTarget ?>" class="btn-default"><?php echo $sc_btnTitle ?></a>
+              </div>
+              <?php } ?>
+            </div>
+          </div>
+          <?php } ?>
+        <?php } ?>
+      </div>  
+      <?php } ?>
+    </div>
+  </section>
+  <?php } ?>
+
 
   <?php endwhile; ?>
 </main>

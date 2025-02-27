@@ -11,14 +11,14 @@ function js_custom_init() {
     //'supports'  => array('title','editor','thumbnail')
 
     $post_types = array(
-        array(
-          'post_type' => 'projects',
-          'menu_name' => 'Projects',
-          'plural'    => 'Projects',
-          'single'    => 'Project',
-          'menu_icon' => 'dashicons-portfolio',
-          'supports'  => array('title','editor')
-        )
+        // array(
+        //   'post_type' => 'projects',
+        //   'menu_name' => 'Projects',
+        //   'plural'    => 'Projects',
+        //   'single'    => 'Project',
+        //   'menu_icon' => 'dashicons-portfolio',
+        //   'supports'  => array('title','editor')
+        // )
     );
     
     if($post_types) {

@@ -1,3 +1,17 @@
+@mixin section_h2($color:$color_secondary) {
+  color: $color;
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0;
+}
+@mixin section_h3($color:$color_secondary) {
+  color: $color;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
   overflow-wrap: normal;
   word-wrap: normal;
@@ -204,6 +218,12 @@ h6 { font-size: 13px; }
       position: relative;
       appearance: none;
       background-color: transparent;
+      i {
+        display: inline-block;
+        position: relative;
+        top: -10px;
+        font-size: 20px;
+      }
       svg {
         display: inline-block;
         width: 80%;
@@ -624,10 +644,7 @@ h6 { font-size: 13px; }
     }
   }
   .infoTitle {
-    color: $color_secondary;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 1.2;
+    @include section_h3($color_secondary);
     margin-bottom: 10px;
   }
   .infoText {
@@ -708,11 +725,7 @@ h6 { font-size: 13px; }
     z-index: 10;
     margin-bottom: 60px;
     h2 {
-      color: $color_secondary;
-      font-size: 4rem;
-      font-weight: 600;
-      line-height: 1.2;
-      margin: 0 0;
+      @include section_h2();
     }
     p {
       font-size: 1.35rem;
@@ -760,14 +773,168 @@ h6 { font-size: 13px; }
         margin-bottom: 40px;
       }
       .infoBottom {
-        font-size: 22px;
+        font-size: 23px;
         font-weight: 600;
         line-height: 1.2;
+        letter-spacing: 0.03em;
         color: $color_primary;
       }
     }
   }
 }
+
+.section-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -30px;
+  margin-right: -30px;
+  .infoCol {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    @include tab {
+      width: 33.333%;
+    }
+  }
+  .infoIcon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    span {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+  .infoTitle {
+    @include section_h3($color_primary);
+    margin-bottom: 25px;
+    span {
+      border-bottom: 2px solid $color_secondary;
+    }
+  }
+  .infoText {
+    margin-bottom: 30px;
+  }
+}
+
+.row4-section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @include tab {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .wrapper {
+    @include tab {
+      width: 80%;
+    }
+  }
+  .section-columns {
+    margin-top: 50px;
+  }
+  .title-block {
+    text-align: center;
+  }
+  .section-title {
+    @include section_h2();
+  }
+}
+
+.site-footer {
+  background: #009C8910;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @include tab {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .foot-title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    color: $color_primary;
+    margin-bottom: 15px;
+  }
+  .footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    .foot-contact-info {
+      width: 100%;
+      @include tab {
+        width: 60%;
+      }
+    }
+    .foot-contact-map {
+      width: 100%;
+      @include tab {
+        width: 40%;
+      }
+      .mapframe {
+        width: 100%;
+        padding-bottom: 50%;
+        position: relative;
+        overflow: hidden;
+      }
+      iframe {
+        border: none;
+        width: 100%!important;
+        height: 100%!important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+      }
+    }
+  }
+  .foot-info {
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin:13px 0;
+      font-weight: 500;
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: $color_primary;
+        transition: all ease .3s;
+        position: relative;
+        &:after {
+          content:"";
+          display: block;
+          width: 100%;
+          height: 2px;
+          background: $color_secondary;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          transform: scaleX(0);
+          transition: all ease .3s;
+        }
+        &:hover, &:focus {
+          color: $color_secondary;
+          &:after {
+            transform: scaleX(1);
+          }
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      i {
+        color: $color_secondary;
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
 
 @media screen and (max-width: 960px) {
   .site-header {
