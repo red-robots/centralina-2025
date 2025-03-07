@@ -65,7 +65,7 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
             <?php } ?>
           <?php } ?>
         <?php } ?>
-        <button class="searchBtn">
+        <button class="searchBtn" aria-expanded="false">
           <span class="sr">Search</span>
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
@@ -85,10 +85,28 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
           <?php  wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu','container_class'=>false, 'link_before'=>'<span>','link_after'=>'</span><i aria-hidden="true"></i>') ); ?>
         </nav>
       </div>
-    </div>
 
-    <div class="MobileNavigation"></div>
+      <div class="mobile-buttons">
+        <button class="mobile-toggle" aria-expanded="false"><span class="sr-only">Mobile Navigation</span><span class="bar"></span></button>
+      </div>
+
+      <div class="header-search-form">
+        <form action="<?php echo get_site_url() ?>" method="get">
+          <div class="search-input">
+            <input type="text" name="s" value="" placeholder="Search here..." />
+          </div>
+        </form>
+      </div>
+    </div>
+    
 	</header>
+
+  <div class="MobileNavigation">
+    <a href="<?php echo get_site_url() ?>" class="mobile-home"><span class="sr-only">Homepage</span></a>
+    <button class="mobileNavClose"><span class="sr-only">Close Mobile Navigation</span></button>
+    <div class="mobileNavContent"></div>
+  </div>
+  <div class="MobileNavigationOverlay"></div>
 
   <?php get_template_part("parts/hero"); ?>
 

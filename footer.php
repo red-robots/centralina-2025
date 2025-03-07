@@ -2,11 +2,10 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
     <?php  
-      $contact_details = get_field('contact_details','option');
-      $map_embed = get_field('map_embed','option');
-      $social_media = get_field('social_media','option');
-    ?>		
-
+    $contact_details = get_field('contact_details','option');
+    $map_embed = get_field('map_embed','option');
+    $social_icons = get_social_icons();
+    ?>
     <div class="footerTop">
       <div class="wrapper">
         <div class="footer-columns">
@@ -28,6 +27,21 @@
                 <?php } ?>
               <?php } ?>
             </div>
+
+            <?php if ($social_icons) { ?>
+            <div class="social-media-links">
+              <div class="social-title">Follow</div>
+              <div class="social-links">
+              <?php foreach ($social_icons as $sm) { ?>
+              <a href="<?php echo $sm['url'] ?>" target="<?php echo $sm['target'] ?>">
+                <i class="<?php echo $sm['icon'] ?>"></i>
+                <span class="sr-only"><?php echo $sm['title'] ?></span>
+              </a>
+              <?php } ?>
+              </div>
+            </div>    
+            <?php } ?>
+        
           </div>
           <?php } ?>
 
@@ -39,22 +53,14 @@
           </div>
           <?php } ?>
         </div>
-        <?php if ($social_media) { ?>
-        <div class="foot-social-media">
-          <div class="foot-title">Follow</div>
-          <?php foreach ($social_media as $sm) { ?>
-            
-          <?php } ?>
-        </div>    
-        <?php } ?>
       </div>
     </div>
 
     <?php 
       $copyright = get_field('copyright', 'option'); 
-      $footer_logos = get_field('footer_logos', 'option'); 
+      $footerLogos = get_field('footer_logos', 'option'); 
     ?>
-    <div class="copyright-section">
+    <div class="copyright-section<?php echo ($footerLogos) ? ' has-footer-logos':'' ?>">
       <div class="wrapper">
         <div class="flexwrap">
           <?php if ($copyright) { ?>
@@ -63,7 +69,18 @@
             <div class="poweredby">Site by <a href="https://bellaworksweb.com/" target="_blank">Bellaworks</a></div>      
           </div>
           <?php } ?>
-          <div class="footer-logo"></div>
+          <?php if ($footerLogos) { ?>
+          <div class="footer-logo">
+            <?php foreach ($footerLogos as $f) { 
+            $img = $f['image'];
+            if($img) { ?>
+            <figure>
+              <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+            </figure>
+            <?php } ?>
+            <?php } ?>
+          </div>
+          <?php } ?>
         </div>
       </div>
     </div>
