@@ -1367,6 +1367,29 @@ body:not(.home) {
   #content {
     margin-top: 70px;
   }
+
+  .hero {
+    margin-top: 70px;
+  }
+  body.admin-bar.logged-in {
+    .site-header {
+      position: relative;
+    }
+    .hero {
+      margin-top: 0;
+    }
+    .MobileNavigation {
+      top: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 782px) {
+  body.admin-bar.logged-in {
+    .MobileNavigation {
+      top: 45px;
+    }
+  }
 }
 
 

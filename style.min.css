@@ -1586,6 +1586,11 @@ body:not(.home) h1.page-title{margin-top:0}
 .MobileNavigation.closed{display:block;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-name:slideOutRight;animation-name:slideOutRight}
 .mobile-navigation-active .MobileNavigationOverlay{display:block;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:10000}
 #content{margin-top:70px}
+.hero{margin-top:70px}
+body.admin-bar.logged-in .site-header{position:relative}
+body.admin-bar.logged-in .hero{margin-top:0}
+body.admin-bar.logged-in .MobileNavigation{top:32px}
+}@media screen and (max-width:782px){body.admin-bar.logged-in .MobileNavigation{top:45px}
 }@media screen and (max-width:768px){.hero{height:75vh}
 .hero figure{width:100%}
 .hero figure:before{width:100% !important;-o-object-position:65% 0 !important;object-position:65% 0 !important}
