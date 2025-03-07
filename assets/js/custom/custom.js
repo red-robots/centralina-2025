@@ -16,10 +16,17 @@ jQuery(document).ready(function ($) {
         $('.site-header .main-navigation').appendTo('.mobileNavContent');
         $('.site-header .secondaryNav').appendTo('.mobileNavContent');
       }
+
+      if( $('.foot-contact-map .social-media-links').length==0 ) {
+        $('.foot-contact-info .social-media-links').appendTo('.foot-contact-map');
+      }
     } else {
       if( $('.site-header .primary-navigation .main-navigation').length==0 ) {
         $('.mobileNavContent .main-navigation').appendTo('.site-header .primary-navigation');
         $('.mobileNavContent .secondaryNav').appendTo('.site-header .header-top .header-right');
+      }
+      if( $('.foot-contact-info .social-media-links').length==0 ) {
+        $('.foot-contact-map .social-media-links').appendTo('.foot-contact-info');
       }
     }
   }

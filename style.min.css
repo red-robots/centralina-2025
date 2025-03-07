@@ -1468,6 +1468,7 @@ body:not(.home) h1.page-title{margin-top:0}
 .site-footer .footer-columns .foot-contact-info{width:100%;margin-bottom:20px}
 .site-footer .footer-columns .foot-contact-info .social-media-links{margin-top:50px}
 .site-footer .footer-columns .foot-contact-map{width:100%}
+.site-footer .footer-columns .foot-contact-map .social-media-links{margin-top:50px}
 .site-footer .footer-columns .foot-contact-map .mapframe{width:100%;padding-bottom:50%;position:relative;overflow:hidden}
 .site-footer .footer-columns .foot-contact-map iframe{border:0;width:100% !important;height:100% !important;position:absolute;top:0;left:0;z-index:5}
 .site-footer .foot-info .info{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin:13px 0;font-weight:500;position:relative;padding-left:25px}

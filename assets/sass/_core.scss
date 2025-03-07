@@ -947,6 +947,9 @@ body:not(.home) {
     }
     .foot-contact-map {
       width: 100%;
+      .social-media-links {
+        margin-top: 50px;
+      }
       @include tab {
         width: 40%;
       }
