@@ -108,6 +108,10 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
   </div>
   <div class="MobileNavigationOverlay"></div>
 
-  <?php get_template_part("parts/hero"); ?>
+  <?php if ( is_front_page() || is_home() ) { ?>
+    <?php get_template_part("parts/hero-home"); ?>
+  <?php } else { ?>
+    <?php get_template_part("parts/hero-internal"); ?>
+  <?php } ?>
 
 	<div id="content" class="site-content">

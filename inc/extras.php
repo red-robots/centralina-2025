@@ -258,6 +258,31 @@ function bellaworks_admin_style() {
   wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/admin.css');
 }
 
+add_action('admin_footer', 'custom_admin_add_js');
+function custom_admin_add_js() { ?>
+<script>
+jQuery(document).ready(function($){
+  // $('[data-name="flexible_content"] .acf-fc-layout-handle').each(function(){
+  //   $(this).append('<a href="javascript:void(0)" title="Disable Section" class="visibility-section acf--visibility-section"><span class="dashicons dashicons-visibility"></span></a>');
+  // });
+  // $(document).on('click', '.acf--visibility-section', function(e){
+  //   e.preventDefault();
+  //   $(this).toggleClass('off');
+  //   if( $(this).parent().find('.acf-field-true-false[data-name="disable_section"]').length ) {
+  //     var checkBox = $(this).parent().find('.acf-field-true-false[data-name="disable_section"] input[type="checkbox"]');
+  //   }
+  // });
+  $(document).on('change', '.acf-field-true-false[data-name="disable_section"] input[type="checkbox"]', function(){
+    if( this.checked ) {
+      $(this).parents('.layout[data-layout]').toggleClass('off');
+    } else {
+      $(this).parents('.layout[data-layout]').removeClass('off');
+    }
+  })
+});
+</script>
+<?php }
+
 
 /* Disabling Gutenberg on certain templates */
 function ea_disable_editor( $id = false ) {

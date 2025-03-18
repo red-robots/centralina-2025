@@ -638,6 +638,68 @@ h6 { font-size: 13px; }
   }
 }
 
+.hero-internal {
+  background-color: $color_primary;
+  position: relative;
+  height: 430px;
+  overflow: hidden;
+  .hero-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    .inner {
+      max-width: $wrapper;
+      width: 100%;
+      margin: 0 auto;
+      padding:0 30px;
+      text-align: center;
+    }
+    h1 {
+      color: #FFF;
+      font-size: 4rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin: 0 0;
+    }
+  }
+  .hero-image {
+    margin: 0 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &:before {
+      content:"";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color_primary;
+      opacity: 0.85;
+      z-index: 2;
+    }
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
 .infoCards {
   display: flex;
   flex-wrap: wrap;
