@@ -1696,4 +1696,143 @@ body:not(.home) {
 }
 
 
+/* REPEATABLE */
+.repeatable {
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+.repeatable--intro {
+  .wrapper {
+    max-width: 1000px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .h2 {
+    color: $color_secondary;
+    margin: 0 0;
+  }
+}
+.repeatable--postcard {
+  .flexwrap {
+    justify-content: center;
+    .flexcol {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      min-height: 400px;
+      position: relative;
+      .inner {
+        width: 100%;
+      }
+      &.textBlock {
+        padding: 30px;
+        align-items: center;
+        @include tab {
+          padding: 5vw 5vw;
+        }
+        @include mid {
+          padding-top: 10vw;
+          padding-bottom: 10vw;
+        }
+        a {
+          display: inline-block;
+          text-decoration: underline;
+          transition: all ease .3s;
+          color: $color_link;
+          &:hover, &:focus {
+            opacity: 0.75;
+            transform: translateY(-2px);
+          }
+        }
+      }
+      &.imageBlock {
+        .image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    
+
+    &.details-right {
+      @include tab {
+        flex-direction: row-reverse;
+      }
+    }
+    &.half {
+      @include tab {
+        .flexcol {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+.repeatable--two_column_text {
+  background: #F0F9F8;
+  .wrapper {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .flexcol {
+    width: 100%;
+    padding: 20px;
+    @include tab {
+      width: 50%;
+      padding: 30px;
+    }
+    .feat-image {
+      margin: 0 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .details {
+      p {
+        margin-top: 0;
+        margin-bottom: 1em;
+      }
+      ul {
+        list-style: none;
+        margin: 0 0;
+        padding: 0 0;
+      }
+      ul > li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 20px;
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background: $color_secondary;
+          position: absolute;
+          top: 7px;
+          left: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .h2 {
+      color: $color_secondary;
+      margin: 0 0 10px;
+    }
+  }
+}
+
 
