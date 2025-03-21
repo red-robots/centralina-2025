@@ -1622,7 +1622,7 @@ body:not(.home) h1.page-title{margin-top:0}
 .MobileNavigation{position:fixed;top:0;right:0;max-width:380px;width:100%;height:100vh;background:#191e51;z-index:10005;-webkit-box-shadow:-20px 0 30px rgba(0,0,0,.15);box-shadow:-20px 0 30px rgba(0,0,0,.15)}
 .MobileNavigation .searchBtn{display:none}
 .MobileNavigation .mobile-home{display:inline-block;text-decoration:none;position:absolute;top:18px;left:25px;display:block;width:40px;height:40px}
-.MobileNavigation .mobile-home:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background-image:url("images/icons/home.svg");background-size:100%;background-position:center;background-repeat:no-repeat}
+.MobileNavigation .mobile-home:before{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background-image:url("images/home.png");background-size:100%;background-position:center;background-repeat:no-repeat}
 .MobileNavigation .mobileNavClose{position:absolute;top:15px;right:20px;display:block;width:40px;height:40px;padding:0;background-color:transparent;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0}
 .MobileNavigation .mobileNavClose:before,.MobileNavigation .mobileNavClose:after{content:"";display:block;width:85%;height:3px;background-color:#191e51;position:absolute;top:50%;left:50%}
 .MobileNavigation .mobileNavClose:before{-webkit-transform:translateX(-50%) translateY(-50%) rotate(45deg);transform:translateX(-50%) translateY(-50%) rotate(45deg)}
@@ -1641,7 +1641,7 @@ body:not(.home) h1.page-title{margin-top:0}
 .MobileNavigation .main-navigation .submenu-toggle i{display:inline-block;-webkit-transition:-webkit-transform ease .2s;transition:-webkit-transform ease .2s;transition:transform ease .2s;transition:transform ease .2s,-webkit-transform ease .2s}
 .MobileNavigation .main-navigation .submenu-toggle.active{-webkit-transform:scale(-1);transform:scale(-1)}
 .MobileNavigation .secondaryNav{background:transparent;color:#fff;padding:20px 30px}
-.MobileNavigation .secondaryNav span.info{display:block;width:100%;text-align:center;margin:15px 0;font-size:1.2rem}
+.MobileNavigation .secondaryNav span.info{display:block;width:100%;text-align:center;margin:15px 0;font-size:1.3rem}
 .MobileNavigation .secondaryNav span.info a{color:#fff;display:inline-block;padding:5px;text-decoration:none;position:relative}
 .MobileNavigation .secondaryNav span.info a:after{content:"";display:block;width:100%;border-bottom:1px dotted rgba(255,255,255,.75)}
 .MobileNavigation.open{display:block;-webkit-animation-duration:.5s;animation-duration:.5s;-webkit-animation-name:slideInRight;animation-name:slideInRight}

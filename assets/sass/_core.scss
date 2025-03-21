@@ -1394,7 +1394,8 @@ body:not(.home) {
         position: absolute;
         top: 0;
         left: 0;
-        background-image: url('images/icons/home.svg');
+        // background-image: url('images/icons/home.svg');
+        background-image: url('images/home.png');
         background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
@@ -1519,7 +1520,7 @@ body:not(.home) {
         width: 100%;
         text-align: center;
         margin: 15px 0;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         a {
           color: #FFF;
           display: inline-block;
