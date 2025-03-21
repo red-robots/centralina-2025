@@ -1835,4 +1835,35 @@ body:not(.home) {
   }
 }
 
+.repeatable--affiliations {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  .titleDiv {
+    text-align: center;
+    h2 {
+      color: $color_secondary;
+      margin: 0 0 30px;
+    }
+  }
+  .flexwrap {
+    justify-content: center;
+    gap: 5vw;
+    figure {
+      margin: 0 0;
+      a {
+        display: inline-block;
+        transition: all ease .3s;
+        filter: drop-shadow(4px 10px 10px transparent);
+        &:hover, &:focus {
+          transform: translateY(-3px);
+          filter: drop-shadow(4px 10px 10px rgba(0,0,0,.2));
+        }
+      }
+      img {
+        width: auto;
+        height: 80px;
+      }
+    }
+  }
+}
 

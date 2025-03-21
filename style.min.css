@@ -1554,6 +1554,14 @@ body:not(.home) h1.page-title{margin-top:0}
 .repeatable--two_column_text .flexcol .details ul>li:before{content:"";display:inline-block;width:8px;height:8px;border-radius:100%;background:#009c89;position:absolute;top:7px;left:0}
 .repeatable--two_column_text .flexcol .details ul>li:last-child{margin-bottom:0}
 .repeatable--two_column_text .flexcol .h2{color:#009c89;margin:0 0 10px}
+.repeatable--affiliations{padding-top:60px;padding-bottom:60px}
+.repeatable--affiliations .titleDiv{text-align:center}
+.repeatable--affiliations .titleDiv h2{color:#009c89;margin:0 0 30px}
+.repeatable--affiliations .flexwrap{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;gap:5vw}
+.repeatable--affiliations .flexwrap figure{margin:0}
+.repeatable--affiliations .flexwrap figure a{display:inline-block;-webkit-transition:all ease .3s;transition:all ease .3s;-webkit-filter:drop-shadow(4px 10px 10px transparent);filter:drop-shadow(4px 10px 10px transparent)}
+.repeatable--affiliations .flexwrap figure a:hover,.repeatable--affiliations .flexwrap figure a:focus{-webkit-transform:translateY(-3px);transform:translateY(-3px);-webkit-filter:drop-shadow(4px 10px 10px rgba(0,0,0,0.2));filter:drop-shadow(4px 10px 10px rgba(0,0,0,0.2))}
+.repeatable--affiliations .flexwrap figure img{width:auto;height:80px}
 @media(min-width:1024px){.site-header .header-top{padding-left:5vw;padding-right:5vw}
 .site-header .header-inner{padding-left:5vw;padding-right:5vw}
 .infoCards .infoCard{width:33.333%}
