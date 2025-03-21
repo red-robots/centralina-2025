@@ -7,6 +7,27 @@
  */
 jQuery(document).ready(function ($) {
   var mobileBreakPoint = 1024;
+
+  if ($('.main-navigation ul.sub-menu').length) {
+    $('.main-navigation ul.sub-menu').each(function () {
+      var submenu = $(this);
+      $('<button class="submenu-toggle" aria-label="Sub-Menu"><i class="fa-solid fa-chevron-down"></i></button>').insertBefore(submenu);
+      submenu.wrap('<div class="submenu-wrapper" />');
+    });
+  }
+
+  $(document).on('click', '.mobileNavContent .submenu-toggle', function (e) {
+    e.preventDefault();
+    var current = $(this);
+    $(this).toggleClass('active');
+    $(this).next().slideToggle();
+    $('.mobileNavContent .submenu-toggle').not(current).each(function () {
+      if ($(this).hasClass('active')) {
+        $(this).removeClass('active');
+        $(this).next().slideUp();
+      }
+    });
+  });
   $(window).on('load resize', function () {
     mobileNavigation();
   });
