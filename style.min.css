@@ -1546,6 +1546,10 @@ body:not(.home) h1.page-title{margin-top:0}
 .intro-section .columns .fcol.fcol2 .featured-image figure img{width:100%;height:auto;border-radius:15px;border:3px solid #fff;float:left;position:relative;z-index:5}
 .intro-section .columns .fcol.fcol2 .h3{color:#191e51;font-size:25px;font-weight:600;line-height:1.2;margin:0 0 30px}
 .intro-section .columns .fcol.fcol2 .h3 span{display:inline-block;border-bottom:2px solid #009c89}
+div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;gap:1em}
+.button-common{display:inline-block;text-decoration:none !important;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:0;padding:12px 25px 11px;color:#191e51 !important;-webkit-transition:all ease .3s;transition:all ease .3s;position:relative;text-align:center;border-radius:500px;-webkit-box-shadow:1px 0 1px #fff inset;box-shadow:1px 0 1px #fff inset;background:-webkit-gradient(linear,left top,left bottom,from(#fdfdfd),to(#c1d1d2));background:linear-gradient(to bottom,#fdfdfd 0,#c1d1d2 100%);-webkit-filter:drop-shadow(5px 10px 10px transparent);filter:drop-shadow(5px 10px 10px transparent);-webkit-transition:all ease-in-out .5s;transition:all ease-in-out .5s}
+.button-common:hover,.button-common:focus{opacity:1 !important;-webkit-transform:translateY(-2px);transform:translateY(-2px);-webkit-filter:drop-shadow(5px 10px 10px rgba(0,0,0,0.15));filter:drop-shadow(5px 10px 10px rgba(0,0,0,0.15))}
+.button-common:focus{outline:1px dotted #191e51}
 .repeatable .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .repeatable--intro .wrapper{max-width:1000px;text-align:center;padding-top:100px;padding-bottom:100px}
 .repeatable--intro .h2{color:#009c89;margin:0}
@@ -1664,6 +1668,7 @@ body.admin-bar.logged-in .MobileNavigation{top:32px}
 .hero .slideCaption{padding-left:30px;padding-right:30px}
 .hero .slideCaption .title{font-size:2rem}
 .hero .slideCaption .text{font-size:1.35rem}
+}@media screen and (max-width:500px){div.button-wrapper{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}
 }@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}
 100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}

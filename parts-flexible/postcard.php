@@ -1,6 +1,7 @@
 <?php if( get_row_layout() == 'postcard' ) {
   $details_position = get_sub_field('details_position');
   $details = get_sub_field('details');
+  $buttons = get_sub_field('buttons');
   $featured_image = get_sub_field('featured_image');
   $textcolor = get_sub_field('textcolor');
   $bgcolor = get_sub_field('bgcolor');
@@ -28,6 +29,19 @@
       <?php if ($details) { ?>
       <div class="flexcol textBlock">
         <div class="inner"><?php echo anti_email_spam($details); ?></div>
+        <?php if ($buttons) { ?>
+        <div class="button-wrapper">
+          <?php foreach ($buttons as $b) { 
+            $btn = $b['button'];
+            $btnName = (isset($btn['title']) && $btn['title']) ? $btn['title'] : '';
+            $btnLink = (isset($btn['url']) && $btn['url']) ? $btn['url'] : '';
+            $btnTarget = (isset($btn['target']) && $btn['target']) ? $btn['target'] : '_self';
+            if($btnName && $btnLink) { ?>
+            <a href="<?php echo $btnLink ?>" target="<?php echo $btnTarget ?>" class="button-common"><span><?php echo $btnName ?></span></a>
+            <?php } ?>
+          <?php } ?>
+        </div>
+        <?php } ?>
       </div>
       <?php } ?>
       <?php if ($featured_image) { ?>

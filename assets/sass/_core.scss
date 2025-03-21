@@ -1848,6 +1848,38 @@ body:not(.home) {
   }
 }
 
+div.button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  @media screen and (max-width: 500px) {
+    justify-content: center;
+  }
+}
+.button-common {
+  display: inline-block;
+  text-decoration: none!important;
+  appearance: none;
+  border: none;
+  padding: 12px 25px 11px;
+  color: $color_primary!important;
+  transition: all ease .3s;
+  position: relative;
+  text-align: center;
+  border-radius: 500px;
+  box-shadow: 1px 0 1px rgba(255,255,255,1) inset;
+  background: linear-gradient(to bottom,  rgba(253,253,253,1) 0%,rgba(193,209,210,1) 100%);
+  filter: drop-shadow(5px 10px 10px transparent);
+  transition: all ease-in-out .5s;
+  &:hover, &:focus {
+    opacity: 1!important;
+    transform: translateY(-2px);
+    filter: drop-shadow(5px 10px 10px rgba(0,0,0,0.15));
+  }
+  &:focus {
+    outline: 1px dotted $color_primary;
+  }
+}
 
 /* REPEATABLE */
 .repeatable {
