@@ -115,7 +115,7 @@ function format_phone_number($string) {
 
 function get_social_icons() {
   $links = array();
-  $social_media = get_field('social_media','option');
+  $social_media = get_field('social_media_links','option');
   $social_types = array(
       'facebook'  => 'fa fa-facebook',
       'twitter'   => 'fab fa-twitter',
