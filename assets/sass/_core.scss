@@ -1887,6 +1887,31 @@ div.button-wrapper {
   }
 }
 
+.button-outline {
+  display: inline-block;
+  text-decoration: none!important;
+  appearance: none;
+  border: 1px solid #FFF;
+  padding: 12px 25px 11px;
+  color: #FFF!important;
+  transition: all ease .3s;
+  position: relative;
+  text-align: center;
+  border-radius: 500px;
+  box-shadow: none;
+  background-color: transparent;
+  transition: all ease-in-out .5s;
+  &:hover, &:focus {
+    opacity: 1!important;
+    transform: translateY(-2px);
+    background-color: #FFF;
+    color: #000!important;
+  }
+  &:focus {
+    outline: 1px dotted $color_primary;
+  }
+}
+
 /* REPEATABLE */
 .repeatable {
   .flexwrap {
@@ -1968,7 +1993,6 @@ div.button-wrapper {
     }
   }
 }
-
 .repeatable--two_column_text {
   background: #F0F9F8;
   .wrapper {
@@ -2025,7 +2049,6 @@ div.button-wrapper {
     }
   }
 }
-
 .repeatable--affiliations {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -2055,6 +2078,24 @@ div.button-wrapper {
         height: 80px;
       }
     }
+  }
+}
+.repeatable--fullwidth_text_content {
+  .wrapper {
+    max-width: 1000px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    @media screen and (min-width: 1350px) {
+      padding-top: 80px;
+      padding-bottom: 90px;
+    }
+  }
+  .button-wrapper {
+    margin-top: 35px;
+  }
+  h2 {
+    margin: 0 0;
+    font-size: 3rem;
   }
 }
 

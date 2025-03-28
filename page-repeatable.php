@@ -19,6 +19,7 @@ get_header();
       include( locate_template('parts-flexible/postcard.php') ); 
       include( locate_template('parts-flexible/two_column_text.php') ); 
       include( locate_template('parts-flexible/affiliations.php') ); 
+      include( locate_template('parts-flexible/fullwidth_text_content.php') ); 
     ?>
 
     <?php $ctr++; endwhile; ?>
