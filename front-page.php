@@ -130,20 +130,26 @@ get_header();
   <?php  
   $row3_intro = get_field('row3_intro');
   $row3_cards = get_field('row3_cards');
+  $row3_phonebook = get_field('row3_phonebook');
   if($row3_intro) { ?>
-  <section class="row3-section">
+  <section class="row3-section section-multiple-cards">
     <div class="wrapper">
       <div class="inner">
         <?php if ($row3_intro) { ?>
         <div class="intro"><?php echo anti_email_spam($row3_intro); ?></div>  
         <?php } ?>
 
-        <?php if ($row3_cards) { ?>
+        <?php if ($row3_phonebook) { ?>
         <div class="infoCards">
-          <?php foreach ($row3_cards as $c) { 
-            $title = $c['title'];
-            $text = $c['text'];
-            $bottom = $c['bottom'];
+          <?php foreach ($row3_phonebook as $p) { 
+            $pid = $p->ID;
+            $title = $p->post_title;
+            $company = get_field('company', $pid);
+            $phone = get_field('phone', $pid);
+
+            // $title = $c['title'];
+            // $text = $c['text'];
+            // $bottom = $c['bottom'];
             if($title || $text) { ?>
             <div class="infoCard">
               <div class="inside">
@@ -152,12 +158,12 @@ get_header();
                     <?php if ($title) { ?>
                     <div class="infoTitle"><?php echo $title ?></div>  
                     <?php } ?>
-                    <?php if ($text) { ?>
-                    <div class="infoText"><?php echo anti_email_spam($text); ?></div>  
+                    <?php if ($company) { ?>
+                    <div class="infoText"><?php echo anti_email_spam($company); ?></div>  
                     <?php } ?>
                   </div>
-                  <?php if ($bottom) { ?>
-                  <div class="infoBottom"><?php echo $bottom ?></div>  
+                  <?php if ($phone) { ?>
+                  <div class="infoBottom"><?php echo $phone ?></div>  
                   <?php } ?>
                 </div>
               </div>

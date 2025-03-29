@@ -69,3 +69,6 @@
 [data-name="flexible_content"] [data-layout="postcard"] [data-name="details"] {
   width: 65%;
 }
+[data-name="listing_details"] [data-name="photo"] .image-wrap img {
+  max-width: 90px!important;
+}
