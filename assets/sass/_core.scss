@@ -2003,6 +2003,17 @@ div.button-wrapper {
       }
     }
   }
+  .textBlock ul > li ul {
+    padding-left: 20px;
+  }
+  .textBlock ul > li ul > li {
+    padding-left: 17px;
+    &:before {
+      width: 10px;
+      height: 2px;
+      top: 10px;
+    }
+  }
 }
 .repeatable--two_column_text {
   background: #F0F9F8;
