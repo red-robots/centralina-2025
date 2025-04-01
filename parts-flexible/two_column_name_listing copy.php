@@ -53,8 +53,13 @@
           </div>
         </div> 
         <?php } else { ?>
-          <?php if ($list_post_type && is_array($list_post_type)) { 
-            $entries = $list_post_type;
+          <?php if ($list_post_type) { 
+            $args = array(
+              'posts_per_page'  => -1,
+              'post_type'       => $list_post_type,
+              'post_status'     => 'publish'
+            );
+            $entries = get_posts($args);
             if($entries) { ?>
             <div class="fxcol fxLeft">
               <div class="card-gradient">

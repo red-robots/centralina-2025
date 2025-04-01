@@ -12,6 +12,14 @@ function js_custom_init() {
 
     $post_types = array(
       array(
+        'post_type' => 'staff',
+        'menu_name' => 'Staff',
+        'plural'    => 'Staff',
+        'single'    => 'Staff',
+        'menu_icon' => 'dashicons-groups',
+        'supports'  => array('title','editor','thumbnail')
+      ),
+      array(
         'post_type' => 'phonebook',
         'menu_name' => 'Phonebook',
         'plural'    => 'Phonebook',
