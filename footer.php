@@ -5,7 +5,10 @@
     $contact_details = get_field('contact_details','option');
     $map_embed = get_field('map_embed','option');
     $social_icons = get_social_icons();
+    global $post;
+    $is_contact_us = ( isset($post->post_name) && $post->post_name=='contact' ) ? true : false;
     ?>
+    <?php if ($is_contact_us==false) { ?>
     <div class="footerTop">
       <div class="wrapper">
         <div class="footer-columns">
@@ -55,6 +58,7 @@
         </div>
       </div>
     </div>
+    <?php } ?>
 
     <?php 
       $copyright = get_field('copyright', 'option'); 

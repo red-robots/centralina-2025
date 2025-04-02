@@ -344,3 +344,48 @@ function bw_hide_classic_editor() {
 }
 
 
+/* Shortcode for Address */
+function get_contact_details_shortcode( $atts ){
+  $a = shortcode_atts( array(
+    'field' => '',
+  ), $atts );
+  $field = $a['field'];
+  $slug = ($field) ? sanitize_title($field) : '';
+  $contact_details = get_field('contact_details','option');
+  $result = '';
+  if($field=='Map') {
+    $map_embed = get_field('map_embed','option');
+    if($map_embed) {
+      $result = '<div class="contact-map-embed">' . $map_embed . '</div>';
+    }
+  } else {
+    if($contact_details) {
+      foreach($contact_details as $c) {
+        $label = ($c['label']) ? trim($c['label']) : '';
+        $text = $c['description'];
+        $icon = $c['icon'];
+        if($label==$field) {
+          $result = '<div class="contact-item info--'.$slug.'">' . $icon . $text . '</div>';
+        }
+      }
+    }
+  }
+  return $result;
+}
+add_shortcode( 'get_contact', 'get_contact_details_shortcode' );
+
+
+function get_icon_shortcode( $atts ){
+  $a = shortcode_atts( array(
+    'class' => '',
+  ), $atts );
+  $icon = $a['class'];
+  if($icon) {
+    return '<i class="'.$icon.'"></i>';
+  } else {
+    return '';
+  }
+}
+add_shortcode( 'icon', 'get_icon_shortcode' );
+
+

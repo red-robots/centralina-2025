@@ -22,6 +22,7 @@ get_header();
       include( locate_template('parts-flexible/fullwidth_text_content.php') ); 
       include( locate_template('parts-flexible/two_column_name_listing.php') ); 
       include( locate_template('parts-flexible/multiple_cards.php') ); 
+      include( locate_template('parts-flexible/two_column_contact_info.php') ); 
     ?>
 
     <?php $ctr++; endwhile; ?>

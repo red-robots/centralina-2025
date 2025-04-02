@@ -1557,6 +1557,7 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .repeatable--intro .wrapper{max-width:1000px;text-align:center;padding-top:100px;padding-bottom:100px}
 .repeatable--intro .h2{color:#009c89;margin:0}
+.repeatable--intro p{font-size:20px}
 .repeatable--postcard .flexwrap{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .repeatable--postcard .flexwrap .flexcol{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%;min-height:400px;position:relative}
 .repeatable--postcard .flexwrap .flexcol .inner{width:100%}
@@ -1611,6 +1612,27 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--two_column_name_listing .fxRight div.button-wrapper{margin-top:25px}
 .repeatable--two_column_name_listing .fxRight .button-outline{border:2px solid #009c89;color:#009c89 !important;font-weight:600}
 .repeatable--two_column_name_listing .fxRight .button-outline:hover,.repeatable--two_column_name_listing .fxRight .button-outline:focus{background-color:#009c89 !important;color:#fff !important}
+.repeatable--two_column_contact_info{padding-bottom:50px}
+.repeatable--two_column_contact_info .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-left:-20px;margin-right:-20px}
+.repeatable--two_column_contact_info .flexcol{width:100%;padding:20px}
+.repeatable--two_column_contact_info .flexcol .contact-item{font-size:18px;font-weight:500;color:#191e51;line-height:1.3}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items a{display:inline-block;color:#191e51;text-decoration:none}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items p{margin:0;font-size:18px;font-weight:500;color:#191e51;line-height:1.3}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items [class*=fa-]{font-size:22px;line-height:1;color:#009c89}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items p:has([class*=fa-]),.repeatable--two_column_contact_info .flexcol.fleft .contact-items .contact-item:has([class*=fa-]){position:relative;margin:20px 0;padding-left:38px}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items p:has([class*=fa-]) [class*=fa-],.repeatable--two_column_contact_info .flexcol.fleft .contact-items .contact-item:has([class*=fa-]) [class*=fa-]{position:absolute;top:0;left:0}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items p a{color:#0064b1 !important;text-decoration:underline !important}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items p a:hover,.repeatable--two_column_contact_info .flexcol.fleft .contact-items p a:focus{color:#0896db !important;text-decoration:none !important}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items p a:focus{outline:1px dotted #0064b1 !important}
+.repeatable--two_column_contact_info .flexcol.fleft .contact-items .contact-item a:hover,.repeatable--two_column_contact_info .flexcol.fleft .contact-items .contact-item a:focus{color:#0896db !important}
+.repeatable--two_column_contact_info .flexcol.fleft blockquote{background-color:#009c89;color:#fff;margin:35px 0 20px;padding:25px 30px;border-radius:15px}
+.repeatable--two_column_contact_info .flexcol.fleft blockquote p{font-size:20px;font-style:italic;line-height:1.3;margin:10px 0}
+.repeatable--two_column_contact_info .flexcol.fright .inside{background-color:#eff9f8;padding:30px;border-radius:15px}
+.repeatable--two_column_contact_info .flexcol.fright .inside h3{margin:0 0 15px;font-size:22px;font-weight:700;line-height:1.2;color:#191e51}
+.repeatable--two_column_contact_info .flexcol.fright .inside .info--address i[class*=fa-]{display:none}
+.repeatable--two_column_contact_info .flexcol.fright .inside .contact-map-embed{position:relative;padding-bottom:45%;margin-top:20px}
+.repeatable--two_column_contact_info .flexcol.fright .inside iframe{width:100% !important;height:100% !important;display:block;position:absolute;top:0;left:0}
+.flexible-content-wrapper:has(.repeatable--two_column_contact_info) .repeatable--intro .wrapper{padding-bottom:40px}
 @media(min-width:1024px){.site-header .header-top{padding-left:5vw;padding-right:5vw}
 .site-header .header-inner{padding-left:5vw;padding-right:5vw}
 .infoCards .infoCard{width:33.333%}
@@ -1631,6 +1653,9 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--postcard .flexwrap.details-right{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
 .repeatable--postcard .flexwrap.half .flexcol{width:50%}
 .repeatable--two_column_text .flexcol{width:50%;padding:30px}
+.repeatable--two_column_contact_info .flexwrap{margin-left:-40px;margin-right:-40px}
+.repeatable--two_column_contact_info .flexcol{width:50%;padding:40px}
+.repeatable--two_column_contact_info .flexcol.fright .inside{padding:45px}
 }@media(min-width:1200px){.infoCards{margin-left:-30px;margin-right:-30px}
 .infoCards .infoCard{padding-left:35px;padding-right:35px}
 .infoCards .infoCard .inside{padding-top:40px;padding-bottom:40px}
@@ -1705,6 +1730,7 @@ body.admin-bar.logged-in .MobileNavigation{top:32px}
 .hero .slideCaption{padding-left:30px;padding-right:30px}
 .hero .slideCaption .title{font-size:2rem}
 .hero .slideCaption .text{font-size:1.35rem}
+.repeatable--two_column_contact_info .flexcol.fleft .inside{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap}
 }@media screen and (max-width:500px){div.button-wrapper{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}
 }@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}
