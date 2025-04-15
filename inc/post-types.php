@@ -95,11 +95,11 @@ function build_taxonomies() {
 
   $post_types = array(
     array(
-      'post_type' => array('projects'),
-      'menu_name' => 'Project Categories',
-      'plural'    => 'Project Categories',
-      'single'    => 'Project Category',
-      'taxonomy'  => 'project-category'
+      'post_type' => array('staff'),
+      'menu_name' => 'Staff Department',
+      'plural'    => 'Staff Departments',
+      'single'    => 'Staff Department',
+      'taxonomy'  => 'staff-department'
     )
   );
 

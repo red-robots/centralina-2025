@@ -389,3 +389,25 @@ function get_icon_shortcode( $atts ){
 add_shortcode( 'icon', 'get_icon_shortcode' );
 
 
+function team_listing_shortcode( $atts ){
+  return '<div class="team-cards">Hello</div>';
+}
+add_shortcode( 'team_listing', 'team_listing_shortcode' );
+
+
+function bella_acf_input_admin_footer() { ?>
+<script type="text/javascript">
+(function($) {
+  acf.add_filter('color_picker_args', function( args, $field ){
+    // do something to args
+    args.palettes = ['#009C89','#43427A','#A82E71','#191E51','#0064B1']
+    return args;
+  });
+})(jQuery); 
+</script>
+<?php
+}
+add_action('acf/input/admin_footer', 'bella_acf_input_admin_footer');
+
+
+

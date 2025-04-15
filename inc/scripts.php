@@ -37,6 +37,12 @@ function bellaworks_scripts() {
   );
 
   wp_enqueue_script( 
+    'bellaworks-masonry', 
+    get_template_directory_uri() . '/assets/js/masonry.min.js', 
+    array(), '4.2.2', true 
+  );
+
+  wp_enqueue_script( 
     'bellaworks-custom', 
     get_template_directory_uri() . '/assets/js/custom/custom.js', 
     array(), '20250226', true 
