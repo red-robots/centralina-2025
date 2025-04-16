@@ -7,6 +7,10 @@ jQuery(document).ready(function ($) {
   
   var mobileBreakPoint = 1024;
 
+  $('.masonry').masonry({
+    itemSelector: '.grid-item',
+  });
+
   if( $('.main-navigation ul.sub-menu').length ) {
     $('.main-navigation ul.sub-menu').each(function(){
       var submenu = $(this);

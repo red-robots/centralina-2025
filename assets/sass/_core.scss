@@ -1945,6 +1945,9 @@ div.button-wrapper {
   p {
     font-size: 20px;
   }
+  .arrow-icon {
+    margin-top: 30px;
+  }
 }
 .repeatable--postcard {
   .flexwrap {
@@ -2129,6 +2132,7 @@ div.button-wrapper {
   padding-bottom: 80px;
   .flexwrap {
     justify-content: space-between;
+    align-items: flex-start;
   }
   .fxLeft, .fxRight {
     margin-top: 20px;
@@ -2395,5 +2399,198 @@ div.button-wrapper {
   }
 }
 
+.arrow-icon {
+  display: inline-block;
+  width: 65px;
+  height: 40px;
+  background-image: url('images/heart-arrow.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.repeatable--shortcode {
+  &:has(.teamInfoCards) {
+    .wrapper {
+      max-width: 1600px;
+      padding-left: 5vw;
+      padding-right: 5vw;
+      @include max(960px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.teamInfoCards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 70px;
+  .infoCard {
+    // max-width: 600px;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all ease .5s;
+    @include max(960px) {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      left: 50% !important;
+      transform: translateX(-50%);
+    }
+    .inside {
+      padding: 20px;
+    }
+    .title, .details {
+      width: 100%;
+    }
+    .title {
+      text-align: center;
+      padding: 20px;
+      min-height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px 10px 0 0;
+      h3 {
+        margin: 0 0;
+        color: #FFF;
+      }
+    }
+
+    .details {
+      background: #F0F9F8;
+      color: $color_primary;
+      border-radius: 0 0 10px 10px;
+      padding: 20px 20px;
+      @include tab {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+      @include max(960px) {
+        padding-left: 8vw;
+        padding-right: 8vw;
+      }
+      @include max(480px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    ul.listing {
+      padding: 0 0;
+      margin: 0 0;
+      list-style: none;
+    }
+    ul.listing > li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 40px 0;
+    }
+    figure {
+      margin: 0 0;
+      padding: 0 0;
+      position: relative;
+      padding-bottom: 100px;
+      width: 100px;
+      @include max(480px) {
+        padding-bottom: 85px;
+        width: 85px;
+      }
+      .no-image {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        background-color: rgba(255,255,255,.15);
+        overflow: hidden;
+        i {
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-size: 5rem;
+          opacity: .15;
+          position: relative;
+          top: 15px;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 100%;
+        box-shadow: 0 0 3px rgba(0,0,0,.3);
+      }
+    }
+    .info {
+      width: calc(100% - 100px);
+      color: $color_primary;
+      padding-left: 20px;
+      @include max(480px) {
+        width: calc(100% - 85px);
+      }
+      .name {
+        margin: 0 0 3px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $color_primary;
+      }
+      .job {
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+      .email {
+        a {
+          font-size: 16px;
+          color: $color_primary;
+          text-decoration: underline;
+          @include max(480px) {
+            font-size: 14px;
+          }
+        }
+      }
+      .phone a {
+        text-decoration: none;
+      }
+      .phone, .email {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .5em;
+        margin: 5px 0;
+        [class*="fa-"] {
+          color: $color_secondary;
+        }
+        a {
+          font-weight: 500;
+          color: $color_primary;
+          display: inline-block;
+          transition: all ease .3s;
+          &:hover, &:focus {
+            color: $color_secondary;
+          }
+        }
+      }
+    }
+  }
+}
 
 

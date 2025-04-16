@@ -390,10 +390,19 @@ add_shortcode( 'icon', 'get_icon_shortcode' );
 
 
 function team_listing_shortcode( $atts ){
-  return '<div class="team-cards">Hello</div>';
+  $content = '';
+  ob_start();
+  include( locate_template('parts/content-team-listing.php') ); 
+  $content = ob_get_contents();
+  ob_end_clean();
+  return $content;
 }
 add_shortcode( 'team_listing', 'team_listing_shortcode' );
 
+function arrow_icon_shortcode( $atts ){
+  return '<span class="arrow-icon"></span>';
+}
+add_shortcode( 'arrow_icon', 'arrow_icon_shortcode' );
 
 function bella_acf_input_admin_footer() { ?>
 <script type="text/javascript">
