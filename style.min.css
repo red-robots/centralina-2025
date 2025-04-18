@@ -1639,7 +1639,7 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .flexible-content-wrapper:has(.repeatable--two_column_contact_info) .repeatable--intro .wrapper{padding-bottom:40px}
 .repeatable--cards_pattern_background{position:relative}
 .repeatable--cards_pattern_background.has-pattern:after{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background-image:url("images/pattern-logo.png");background-size:100% 100%;background-repeat:repeat-x;background-position:top center;opacity:.75}
-.repeatable--cards_pattern_background .wrapper{max-width:100%;margin:0;padding:60px 30px;position:relative;z-index:10}
+.repeatable--cards_pattern_background .wrapper{max-width:100%;margin:0;padding:70px 30px;position:relative;z-index:10}
 .repeatable--cards_pattern_background .infoCards{max-width:1480px;width:100%;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .repeatable--cards_pattern_background .infoCards .infoCard{width:25%;padding:clamp(15px,1.5vw,30px)}
 .repeatable--cards_pattern_background .infoCards .inner{height:100%;background:#fff;border-radius:10px;overflow:hidden;-webkit-box-shadow:0 10px 25px rgba(0,0,0,.25);box-shadow:0 10px 25px rgba(0,0,0,.25)}
