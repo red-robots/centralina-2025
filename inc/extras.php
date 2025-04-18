@@ -419,4 +419,21 @@ function bella_acf_input_admin_footer() { ?>
 add_action('acf/input/admin_footer', 'bella_acf_input_admin_footer');
 
 
+// add new buttons
+add_filter( 'mce_buttons', 'myplugin_register_buttons' );
+function myplugin_register_buttons( $buttons ) {
+  array_push( $buttons, 'edbutton1', 'custom_class' );
+  return $buttons;
+}
+ 
+// Load the TinyMCE plugin : editor_plugin.js (wp2.5)
+add_filter( 'mce_external_plugins', 'myplugin_register_tinymce_javascript' );
+function myplugin_register_tinymce_javascript( $plugin_array ) {
+  //$plugin_array['checklistbutton'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
+  $plugin_array['ctabutton'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
+  return $plugin_array;
+}
+
+
+
 

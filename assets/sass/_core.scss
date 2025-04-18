@@ -12,6 +12,33 @@
   line-height: 1.2;
 }
 
+@mixin bullet_list_style(){
+  ul {
+    list-style: none;
+    margin: 0 0;
+    padding: 0 0;
+  }
+  ul > li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 100%;
+      background: $color_secondary;
+      position: absolute;
+      top: 7px;
+      left: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
   overflow-wrap: normal;
   word-wrap: normal;
@@ -2076,6 +2103,15 @@ div.button-wrapper {
       color: $color_secondary;
       margin: 0 0 10px;
     }
+    h4 {
+      font-size: 20px;
+    }
+    .first-element {
+      margin-top: 0!important;
+    }
+    h4.first-element {
+      margin-top: 10px!important;
+    }
   }
 }
 .repeatable--affiliations {
@@ -2392,13 +2428,112 @@ div.button-wrapper {
     }
   }
 }
-
 .flexible-content-wrapper:has(.repeatable--two_column_contact_info) {
   .repeatable--intro .wrapper {
     padding-bottom: 40px;
   }
 }
+.repeatable--cards_pattern_background {
+  position: relative;
+  &.has-pattern {
+    &:after {
+      content:"";
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url('images/pattern-logo.png');
+      background-size: 100% 100%;
+      background-repeat: repeat-x;
+      background-position: top center;
+      opacity: .75;
+    }
+  }
+  
+  .wrapper {
+    max-width: 100%;
+    margin: 0 0;
+    padding: 60px 30px;
+    position: relative;
+    z-index: 10;
+  }
+  .infoCards {
+    max-width: 1480px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .infoCard {
+      width: 25%;
+      padding: clamp(15px,1.5vw,30px);
+    }
+    .inner {
+      height: 100%;
+      background: #FFF;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
+    }
+    .image {
+      margin: 0 0;
+      position: relative;
+      padding-bottom: 50%;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+    h2.h2 {
+      color: $color_secondary!important;
+      font-weight: 600;
+      margin: 0 0 20px;
+      strong {
+        font-weight: 600;
+      }
+    }
+    .infoText {
+      padding: clamp(20px,2vw,40px);
+      @include bullet_list_style();
+    }
 
+    @media screen and (min-width: 961px) {
+      &.numcols-1 .infoCard {
+        max-width: 700px;
+        width: 100%;
+        margin: 0 auto;
+      }
+      &.numcols-2 .infoCard {
+        width: 50%;
+      }
+      &.numcols-3 .infoCard {
+        width: 33.333%;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      .infoCard {
+        width: 50%;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      .infoCard {
+        max-width: 480px;
+        width: 100%;
+        margin: 10px auto;
+      }
+    }
+  }
+}
 .arrow-icon {
   display: inline-block;
   width: 65px;
@@ -2408,7 +2543,6 @@ div.button-wrapper {
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 .repeatable--shortcode {
   &:has(.teamInfoCards) {
     .wrapper {
@@ -2422,7 +2556,6 @@ div.button-wrapper {
     }
   }
 }
-
 .teamInfoCards {
   display: flex;
   flex-wrap: wrap;

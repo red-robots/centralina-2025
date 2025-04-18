@@ -115,6 +115,16 @@ jQuery(document).ready(function ($) {
     },500);
   });
 
+  if( $('.repeatable--two_column_text .details').length ) {
+    $('.repeatable--two_column_text').each(function(){
+      if( $(this).find('.details').length ) {
+        $(this).find('.details').each(function(){
+          $(this).find('*').eq(0).addClass('first-element');
+        });
+      }
+    });
+  }
+
   /* Slideshow */
   function do_slideshow(selector) {
     var swiper = new Swiper(selector, {

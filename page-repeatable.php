@@ -24,6 +24,7 @@ get_header();
       include( locate_template('parts-flexible/multiple_cards.php') ); 
       include( locate_template('parts-flexible/two_column_contact_info.php') ); 
       include( locate_template('parts-flexible/shortcode.php') ); 
+      include( locate_template('parts-flexible/cards_pattern_background.php') ); 
     ?>
 
     <?php $ctr++; endwhile; ?>

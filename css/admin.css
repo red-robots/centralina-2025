@@ -49,6 +49,17 @@
 .acf-field.acf-field-flexible-content[data-name="flexible_content"] [data-name="bgcolor"] {
   width: 80%;
 }
+
+.acf-field.acf-field-flexible-content[data-name="flexible_content"] [data-layout="cards_pattern_background"] [data-name="bgcolor"] {
+  width: 20%;
+  float: left!important;
+  clear: none!important;
+}
+.acf-field.acf-field-flexible-content[data-name="flexible_content"] [data-layout="cards_pattern_background"] [data-name="bgpattern"] {
+  width: 80%;
+  float: left!important;
+  clear: none!important;
+}
 .acf-flexible-content [data-layout="postcard"] [data-name="h2color"],
 .acf-flexible-content [data-layout="postcard"] [data-name="textcolor"],
 .acf-flexible-content [data-layout="postcard"] [data-name="bgcolor"] {

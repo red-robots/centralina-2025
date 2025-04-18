@@ -1352,7 +1352,7 @@ h6{font-size:13px}
 .btn-default:after{content:"";display:block;width:150%;height:150%;position:absolute;top:0;left:-30vw;opacity:0;background:#191e51;z-index:-1;-webkit-transform:scale(1.5) skewX(-15deg);transform:scale(1.5) skewX(-15deg);-webkit-transition:all ease .6s;transition:all ease .6s}
 .btn-default:hover,.btn-default:focus{color:#fff;background:#191e51}
 .btn-default:focus{outline:1px dotted #191e51}
-.wrapper{max-width:1280px;width:100%;margin:0 auto;padding-left:20px;padding-right:20px}
+.wrapper{max-width:1500px;width:100%;margin:0 auto;padding-left:20px;padding-right:20px}
 .site{position:relative;overflow:hidden}
 .site-header{position:absolute;top:0;left:0;width:100%;z-index:999}
 .site-header .header-top{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;background:#191e51;color:#fff;padding-left:20px;padding-right:20px;position:relative;z-index:15;min-height:50px}
@@ -1437,7 +1437,7 @@ h6{font-size:13px}
 .hero .slideshow .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{background:#f77822;-webkit-transform:scale(1.3);transform:scale(1.3)}
 .hero-internal{background-color:#191e51;position:relative;height:430px;overflow:hidden}
 .hero-internal .hero-title{position:absolute;top:0;left:0;width:100%;height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;z-index:20}
-.hero-internal .hero-title .inner{max-width:1280px;width:100%;margin:0 auto;padding:0 30px;text-align:center}
+.hero-internal .hero-title .inner{max-width:1500px;width:100%;margin:0 auto;padding:0 30px;text-align:center}
 .hero-internal .hero-title h1{color:#fff;font-size:4rem;font-weight:600;line-height:1.2;margin:0}
 .hero-internal .hero-image{margin:0;position:absolute;top:0;left:0;width:100%;height:100%}
 .hero-internal .hero-image:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#191e51;opacity:.85;z-index:2}
@@ -1580,6 +1580,9 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--two_column_text .flexcol .details ul>li:before{content:"";display:inline-block;width:8px;height:8px;border-radius:100%;background:#009c89;position:absolute;top:7px;left:0}
 .repeatable--two_column_text .flexcol .details ul>li:last-child{margin-bottom:0}
 .repeatable--two_column_text .flexcol .h2{color:#009c89;margin:0 0 10px}
+.repeatable--two_column_text .flexcol h4{font-size:20px}
+.repeatable--two_column_text .flexcol .first-element{margin-top:0 !important}
+.repeatable--two_column_text .flexcol h4.first-element{margin-top:10px !important}
 .repeatable--affiliations{padding-top:60px;padding-bottom:60px}
 .repeatable--affiliations .titleDiv{text-align:center}
 .repeatable--affiliations .titleDiv h2{color:#009c89;margin:0 0 30px}
@@ -1634,6 +1637,21 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--two_column_contact_info .flexcol.fright .inside .contact-map-embed{position:relative;padding-bottom:45%;margin-top:20px}
 .repeatable--two_column_contact_info .flexcol.fright .inside iframe{width:100% !important;height:100% !important;display:block;position:absolute;top:0;left:0}
 .flexible-content-wrapper:has(.repeatable--two_column_contact_info) .repeatable--intro .wrapper{padding-bottom:40px}
+.repeatable--cards_pattern_background{position:relative}
+.repeatable--cards_pattern_background.has-pattern:after{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background-image:url("images/pattern-logo.png");background-size:100% 100%;background-repeat:repeat-x;background-position:top center;opacity:.75}
+.repeatable--cards_pattern_background .wrapper{max-width:100%;margin:0;padding:60px 30px;position:relative;z-index:10}
+.repeatable--cards_pattern_background .infoCards{max-width:1480px;width:100%;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
+.repeatable--cards_pattern_background .infoCards .infoCard{width:25%;padding:clamp(15px,1.5vw,30px)}
+.repeatable--cards_pattern_background .infoCards .inner{height:100%;background:#fff;border-radius:10px;overflow:hidden;-webkit-box-shadow:0 10px 25px rgba(0,0,0,.25);box-shadow:0 10px 25px rgba(0,0,0,.25)}
+.repeatable--cards_pattern_background .infoCards .image{margin:0;position:relative;padding-bottom:50%}
+.repeatable--cards_pattern_background .infoCards .image img{display:block;width:100%;height:100%;position:absolute;top:0;left:0;-o-object-position:center;object-position:center;-o-object-fit:cover;object-fit:cover}
+.repeatable--cards_pattern_background .infoCards h2.h2{color:#009c89 !important;font-weight:600;margin:0 0 20px}
+.repeatable--cards_pattern_background .infoCards h2.h2 strong{font-weight:600}
+.repeatable--cards_pattern_background .infoCards .infoText{padding:clamp(20px,2vw,40px)}
+.repeatable--cards_pattern_background .infoCards .infoText ul{list-style:none;margin:0;padding:0}
+.repeatable--cards_pattern_background .infoCards .infoText ul>li{position:relative;padding-left:20px;margin-bottom:20px}
+.repeatable--cards_pattern_background .infoCards .infoText ul>li:before{content:"";display:inline-block;width:8px;height:8px;border-radius:100%;background:#009c89;position:absolute;top:7px;left:0}
+.repeatable--cards_pattern_background .infoCards .infoText ul>li:last-child{margin-bottom:0}
 .arrow-icon{display:inline-block;width:65px;height:40px;background-image:url("images/heart-arrow.svg");background-position:center;background-size:contain;background-repeat:no-repeat}
 .repeatable--shortcode:has(.teamInfoCards) .wrapper{max-width:1600px;padding-left:5vw;padding-right:5vw}
 .teamInfoCards{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-bottom:70px}
@@ -1658,7 +1676,10 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .teamInfoCards .infoCard .info .phone [class*=fa-],.teamInfoCards .infoCard .info .email [class*=fa-]{color:#009c89}
 .teamInfoCards .infoCard .info .phone a,.teamInfoCards .infoCard .info .email a{font-weight:500;color:#191e51;display:inline-block;-webkit-transition:all ease .3s;transition:all ease .3s}
 .teamInfoCards .infoCard .info .phone a:hover,.teamInfoCards .infoCard .info .phone a:focus,.teamInfoCards .infoCard .info .email a:hover,.teamInfoCards .infoCard .info .email a:focus{color:#009c89}
-@media(min-width:1024px){.site-header .header-top{padding-left:5vw;padding-right:5vw}
+@media screen and (min-width:961px){.repeatable--cards_pattern_background .infoCards.numcols-1 .infoCard{max-width:700px;width:100%;margin:0 auto}
+.repeatable--cards_pattern_background .infoCards.numcols-2 .infoCard{width:50%}
+.repeatable--cards_pattern_background .infoCards.numcols-3 .infoCard{width:33.333%}
+}@media(min-width:1024px){.site-header .header-top{padding-left:5vw;padding-right:5vw}
 .site-header .header-inner{padding-left:5vw;padding-right:5vw}
 .infoCards .infoCard{width:33.333%}
 .infoCards .infoCard .inside{padding:30px}
@@ -1746,6 +1767,7 @@ body.admin-bar.logged-in .hero{margin-top:0}
 body.admin-bar.logged-in .MobileNavigation{top:32px}
 }@media screen and (max-width:1023px){.section-multiple-cards .infoCard .textwrap,.section-multiple-cards .infoCard p,.section-multiple-cards .infoCard a{text-align:center}
 .section-multiple-cards .infoCard .textwrap .top{width:100%}
+}@media screen and (max-width:1000px){.repeatable--cards_pattern_background .infoCards .infoCard{width:50%}
 }@media screen and (max-width:960px){.repeatable--two_column_name_listing{padding-top:0}
 .repeatable--two_column_name_listing .fxLeft,.repeatable--two_column_name_listing .fxRight{width:100%}
 .repeatable--shortcode:has(.teamInfoCards) .wrapper{padding-left:20px;padding-right:20px}
@@ -1760,6 +1782,8 @@ body.admin-bar.logged-in .MobileNavigation{top:32px}
 .hero .slideCaption .title{font-size:2rem}
 .hero .slideCaption .text{font-size:1.35rem}
 .repeatable--two_column_contact_info .flexcol.fleft .inside{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.repeatable--cards_pattern_background .infoCards{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}
+.repeatable--cards_pattern_background .infoCards .infoCard{max-width:480px;width:100%;margin:10px auto}
 }@media screen and (max-width:500px){div.button-wrapper{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 }@media screen and (max-width:480px){.teamInfoCards .infoCard .details{padding-left:20px;padding-right:20px}
 .teamInfoCards .infoCard figure{padding-bottom:85px;width:85px}
