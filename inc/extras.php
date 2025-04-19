@@ -430,6 +430,7 @@ function myplugin_register_buttons( $buttons ) {
 add_filter( 'mce_external_plugins', 'myplugin_register_tinymce_javascript' );
 function myplugin_register_tinymce_javascript( $plugin_array ) {
   //$plugin_array['checklistbutton'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
+  $plugin_array['highlightblock'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
   $plugin_array['ctabutton'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
   return $plugin_array;
 }

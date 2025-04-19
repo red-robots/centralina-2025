@@ -161,10 +161,6 @@ h6 { font-size: 13px; }
   &:hover, &:focus {
     color: #FFF;
     background: $color_primary;
-    // &:after {
-    //   left: 0;
-    //   opacity: 1;
-    // }
   }
   &:focus {
     outline: 1px dotted $color_primary;
@@ -2114,6 +2110,28 @@ div.button-wrapper {
     }
   }
 }
+
+.custom-button-element {
+  display: inline-block;
+  margin-top: 20px;
+  a.button {
+    @include button_outline();
+    background-color: transparent!important;
+    &:hover, &:focus {
+      background-color: $color_primary!important;
+    }
+  }
+}
+.highlightBox {
+  background: $color_secondary;
+  color: #FFF;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 0;
+  @include tab {
+    padding: 30px;
+  }
+}
 .repeatable--affiliations {
   padding-top: 60px;
   padding-bottom: 60px;
@@ -2720,6 +2738,172 @@ div.button-wrapper {
           &:hover, &:focus {
             color: $color_secondary;
           }
+        }
+      }
+    }
+  }
+}
+.repeatable--profileBlock {
+  background: transparent linear-gradient(124deg, #0064B1 0%, #009C89 100%) 0% 0% no-repeat padding-box;
+  .wrapper {
+    padding-top: 80px;
+    padding-bottom: 75px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .photoBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    figure {
+      margin: 0 0;
+      width: 85px;
+      height: 85px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 100%;
+      border: 1px solid #FFF;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  .details {
+    text-align: center;
+    color: #FFF;
+    h2,h3,h4,h5,h6 {
+      line-height: 1.2;
+      color: #FFF!important;
+      margin: 0 0 10px
+    }
+    .custom-button-element {
+      a.button {
+        color: #FFF!important;
+        border-color: #FFF!important;
+        background-color: transparent!important;
+        &:hover, &:focus {
+          background-color: #FFF!important;
+          color: $color_primary!important;
+        }
+      }
+    }
+    p:has(.custom-button-element) {
+      margin: 50px 0 0;
+      .custom-button-element {
+        margin-top: 0!important;
+      }
+    }
+  }
+}
+.repeatable--two_column_text_image {
+  .wrapper {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 30px;
+    padding-right: 30px;
+    @include max(1024px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .textCol, .imageCol {
+      width: 100%;
+    }
+    .textCol {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    &.half {
+      justify-content: space-between;
+      .textCol {
+        max-width: unset;
+        @include tab {
+          width: 60%;
+          padding-right: 5vw;
+        }
+        h2 {
+          color: $color_secondary;
+        }
+      }
+      .imageCol {
+        width: 100%;
+        margin-top: 40px;
+        @include tab {
+          width: 40%;
+          margin-top: 0;
+        }
+        figure {
+          margin: 0 0;
+          position: relative;
+          &:after {
+            content: "";
+            display: block;
+            width: 99%;
+            height: 98.5%;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            border-radius: 20px;
+            background: $color_secondary;
+          }
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            border: 2px solid #FFF;
+            position: relative;
+            z-index: 5;
+          }
+        }
+      }
+    }
+  }
+}
+.repeatable--intro_and_two_column {
+  padding: 50px 30px;
+  background-color: rgba($color_secondary, 10%);
+  .intro {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+      color: $color_secondary;
+    }
+  }
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .flexcol {
+      width: 100%;
+      @include bullet_list_style();
+    }
+    &.half {
+      .flexcol {
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+    }
+    
+    @include tab {
+      &.half {
+        gap: 2em;
+        .flexcol {
+          width: calc(50% - 2em);
         }
       }
     }

@@ -128,6 +128,45 @@ $wrapper: 1500px;
 	line-height: 1.5;
 }
 
+@mixin button_outline($color:#191e51) {
+  display: inline-block;
+  text-decoration: none;
+  appearance: none;
+  border: 2px solid $color;
+  border-radius: 300px;
+  padding: 0.6em 1.5em;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $color;
+  transition: all ease .4s;
+  background-color: #FFF;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  &:after {
+    content:"";
+    display: block;
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 0;
+    left: -30vw;
+    opacity: 0;
+    background: $color;
+    z-index: -1;
+    transform: scale(1.5) skewX(-15deg);
+    transition: all ease .6s;
+  }
+  &:hover, &:focus {
+    color: #FFF;
+    background: $color;
+  }
+  &:focus {
+    outline: 1px dotted $color;
+  }
+}
+
 @mixin fontHeadingBlock($color:#FFF) {
 	font-family: $font-secondary;
 	font-size: 20px;
