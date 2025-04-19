@@ -83,3 +83,23 @@
 [data-name="listing_details"] [data-name="photo"] .image-wrap img {
   max-width: 90px!important;
 }
+
+
+
+
+[data-name="flexible_content"] [data-layout="two_column_text_image"] [data-name="text"],
+[data-name="flexible_content"] [data-layout="two_column_text_image"] [data-name="image"] {
+  float: left;
+  clear: none;
+}
+[data-name="flexible_content"] [data-layout="two_column_text_image"] [data-name="image"] {
+  float: right;
+  width: 35%;
+}
+[data-name="flexible_content"] [data-layout="two_column_text_image"] [data-name="image"] .image-wrap img {
+  width: 100%!important;
+}
+[data-name="flexible_content"] [data-layout="two_column_text_image"] [data-name="text"] {
+  width: 65%;
+}
+

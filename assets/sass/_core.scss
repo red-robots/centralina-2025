@@ -2869,6 +2869,16 @@ div.button-wrapper {
           }
         }
       }
+
+      @include tab {
+        &.image-left {
+          flex-direction: row-reverse;
+          .textCol {
+            padding-left: 5vw;
+            padding-right: 0;
+          }
+        }
+      }
     }
   }
 }

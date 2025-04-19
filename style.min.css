@@ -1745,6 +1745,8 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .teamInfoCards .infoCard .details{padding-left:5vw;padding-right:5vw}
 .repeatable--two_column_text_image .flexwrap.half .textCol{width:60%;padding-right:5vw}
 .repeatable--two_column_text_image .flexwrap.half .imageCol{width:40%;margin-top:0}
+.repeatable--two_column_text_image .flexwrap.half.image-left{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+.repeatable--two_column_text_image .flexwrap.half.image-left .textCol{padding-left:5vw;padding-right:0}
 .repeatable--intro_and_two_column .flexwrap.half{gap:2em}
 .repeatable--intro_and_two_column .flexwrap.half .flexcol{width:calc(50% - 2em)}
 }@media(min-width:1200px){.infoCards{margin-left:-30px;margin-right:-30px}
