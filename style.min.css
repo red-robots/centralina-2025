@@ -1602,7 +1602,7 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--fullwidth_text_content .button-wrapper{margin-top:35px}
 .repeatable--fullwidth_text_content h2{margin:0;font-size:3rem}
 .repeatable--two_column_name_listing{padding-top:80px;padding-bottom:80px}
-.repeatable--two_column_name_listing .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
+.repeatable--two_column_name_listing .flexwrap{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .repeatable--two_column_name_listing .fxLeft,.repeatable--two_column_name_listing .fxRight{margin-top:20px;margin-bottom:20px}
 .repeatable--two_column_name_listing .fxLeft{width:45%}
 .repeatable--two_column_name_listing .fxLeft .card-gradient{border-radius:15px;height:100%;padding:10px 30px;background:-webkit-gradient(linear,left top,left bottom,from(#009b89),to(#192052));background:linear-gradient(to bottom,#009b89 0,#192052 100%);color:#fff}

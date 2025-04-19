@@ -2186,7 +2186,8 @@ div.button-wrapper {
   padding-bottom: 80px;
   .flexwrap {
     justify-content: space-between;
-    align-items: flex-start;
+    // align-items: flex-start;
+    align-items: center;
   }
   .fxLeft, .fxRight {
     margin-top: 20px;
