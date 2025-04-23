@@ -1485,6 +1485,7 @@ h6{font-size:13px}
 body:not(.home) .site-header{background-color:#009c89;position:relative}
 body:not(.home) #primary{min-height:30em;padding-top:50px;padding-bottom:50px}
 body:not(.home) h1.page-title{margin-top:0}
+.site-footer{border-top:1px solid #d3ece9}
 .site-footer .wrapper{padding-left:25px;padding-right:25px}
 .site-footer .footerTop{background:#009C8910;padding-top:50px;padding-bottom:50px}
 .site-footer .foot-title,.site-footer .social-title{font-size:20px;font-weight:600;line-height:1.2;letter-spacing:.03em;color:#191e51;margin-bottom:15px}
