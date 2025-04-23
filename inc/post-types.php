@@ -26,6 +26,22 @@ function js_custom_init() {
         'single'    => 'Phonebook',
         'menu_icon' => 'dashicons-id-alt',
         'supports'  => array('title')
+      ),
+      array(
+        'post_type' => 'events',
+        'menu_name' => 'Events',
+        'plural'    => 'Events',
+        'single'    => 'Event',
+        'menu_icon' => 'dashicons-calendar-alt',
+        'supports'  => array('title','editor','thumbnail')
+      ),
+      array(
+        'post_type' => 'webinars',
+        'menu_name' => 'Webinars',
+        'plural'    => 'Webinars',
+        'single'    => 'Webinar',
+        'menu_icon' => 'dashicons-format-video',
+        'supports'  => array('title','editor','thumbnail')
       )
     );
     

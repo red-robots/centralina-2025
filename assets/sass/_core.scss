@@ -2200,6 +2200,92 @@ div.button-wrapper {
     font-size: 3rem;
   }
 }
+
+.staff-infocard {
+  .card-gradient {
+    border-radius: 15px;
+    height: 100%;
+    padding: 10px 30px;
+    background: linear-gradient(to bottom,  rgba(0,155,137,1) 0%,rgba(25,32,82,1) 100%);
+    color: #FFF;
+  }
+  ul.listing {
+    padding: 0 0;
+    margin: 0 0;
+    list-style: none;
+  }
+  ul.listing > li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+  }
+  figure {
+    margin: 0 0;
+    padding: 0 0;
+    position: relative;
+    padding-bottom: 100px;
+    width: 100px;
+    .no-image {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 100%;
+      background-color: rgba(255,255,255,.15);
+      overflow: hidden;
+      i {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 5rem;
+        opacity: .15;
+        position: relative;
+        top: 15px;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 100%;
+      box-shadow: 0 0 3px rgba(0,0,0,.3);
+    }
+  }
+  .info {
+    width: calc(100% - 100px);
+    color: #FFF;
+    padding-left: 20px;
+    .name {
+      margin: 0 0 3px;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #FFF;
+    }
+    .job {
+      font-style: italic;
+    }
+    .email {
+      margin-top: 5px;
+      a {
+        font-size: 16px;
+        color: #FFF;
+        text-decoration: underline;
+      }
+    }
+  }
+}
 .repeatable--two_column_name_listing {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -2829,6 +2915,10 @@ div.button-wrapper {
       }
     }
   }
+  .custom-button-element a.button {
+    padding: .75em 3em;
+    letter-spacing: 0.05em;
+  }
 }
 .repeatable--two_column_text_image {
   .wrapper {
@@ -2946,4 +3036,144 @@ div.button-wrapper {
   }
 }
 
+.section-post-feeds {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .section-title {
+    margin-bottom: 40px;
+    h2 {
+      margin: 0 0;
+      color: $color_secondary;
+    }
+  }
+  figure {
+    margin: 0 0;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  .post-feeds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    @media screen and (min-width: 1025px) {
+      gap: 3em;
+    }
+    .leftCol, .rightCol {
+      width: calc(50% - 1em);
+      @media screen and (min-width: 1025px) {
+        width: calc(50% - 3em);
+      }
+    }
 
+    .details {
+      h3 {
+        margin: 0 0 5px;
+      }
+      h3, h3 a {
+        color: $color_secondary;
+        font-size: 25px;
+        line-height: 1.3;
+      }
+      .event-date {
+        color: $color_blue;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        margin-block-end: 10px;
+      }
+    }
+    .leftCol {
+      figure {
+        margin-bottom: 10px;
+        position: relative;
+        padding-bottom: 60%;
+        overflow: hidden;
+        a {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          &:hover, &:focus {
+            transform: scale(1.02);
+          }
+        }
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          object-position: center;
+          object-fit: cover;
+        }
+      }
+    }
+    .rightCol {
+      ul.feeds {
+        margin: 0 0;
+        padding: 0 0;
+        list-style: none;
+      }
+      ul.feeds > li {
+        padding: 40px 0;
+        border-bottom: 1px solid #CCC;
+        &:last-child {
+          border-bottom: none;
+        }
+        &:has(.post-image) {
+          .inside {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+          }
+          figure {
+            position: relative;
+            overflow: hidden;
+            width: calc(35% - 1.5em);
+            position: relative;
+            a {
+              display: block;
+              position: relative;
+              overflow: hidden;
+              border-radius: 10px;
+              padding-bottom: 60%;
+              &:hover, &:focus {
+                transform: scale(1.02);
+              }
+            }
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              object-position: center;
+              object-fit: cover;
+            }
+          }
+          .details {
+            width: calc(65% - 1.5em);
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 1024px) {
+      gap: 0;
+      .leftCol, .rightCol {
+        width: 100%;
+      }
+      .leftCol {
+        padding-bottom: 35px;
+      }
+      .rightCol {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        ul.feeds > li:first-child {
+          border-top: 1px solid #CCC;
+        }
+      }
+    }
+  }
+}
