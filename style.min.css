@@ -1581,7 +1581,7 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--two_column_text .flexcol .feat-image img{width:100%;height:auto}
 .repeatable--two_column_text .flexcol .details p{margin-top:0;margin-bottom:1em}
 .repeatable--two_column_text .flexcol .details ul{list-style:none;margin:0;padding:0}
-.repeatable--two_column_text .flexcol .details ul>li{position:relative;padding-left:20px;margin-bottom:20px}
+.repeatable--two_column_text .flexcol .details ul>li{position:relative;padding-left:20px;margin-bottom:5px}
 .repeatable--two_column_text .flexcol .details ul>li:before{content:"";display:inline-block;width:8px;height:8px;border-radius:100%;background:#009c89;position:absolute;top:7px;left:0}
 .repeatable--two_column_text .flexcol .details ul>li:last-child{margin-bottom:0}
 .repeatable--two_column_text .flexcol .h2{color:#009c89;margin:0 0 10px}
