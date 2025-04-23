@@ -1744,8 +1744,8 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .section-post-feeds .post-feeds .details h3{margin:0 0 5px}
 .section-post-feeds .post-feeds .details h3,.section-post-feeds .post-feeds .details h3 a{color:#009c89;font-size:25px;line-height:1.3}
 .section-post-feeds .post-feeds .details .event-date{color:#0064b1;font-weight:600;letter-spacing:.03em;-webkit-margin-after:10px;margin-block-end:10px}
-.section-post-feeds .post-feeds .leftCol figure{margin-bottom:10px;position:relative;padding-bottom:60%;overflow:hidden}
-.section-post-feeds .post-feeds .leftCol figure a{display:block;position:absolute;width:100%;height:100%}
+.section-post-feeds .post-feeds .leftCol figure{margin-bottom:10px;position:relative;overflow:hidden}
+.section-post-feeds .post-feeds .leftCol figure a{display:block;position:relative;padding-bottom:65%;border-radius:10px;overflow:hidden}
 .section-post-feeds .post-feeds .leftCol figure a:hover,.section-post-feeds .post-feeds .leftCol figure a:focus{-webkit-transform:scale(1.02);transform:scale(1.02)}
 .section-post-feeds .post-feeds .leftCol figure img{display:block;width:100%;height:100%;position:absolute;top:0;left:0;-o-object-position:center;object-position:center;-o-object-fit:cover;object-fit:cover}
 .section-post-feeds .post-feeds .rightCol ul.feeds{margin:0;padding:0;list-style:none}
