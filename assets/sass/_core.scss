@@ -1946,8 +1946,8 @@ div.button-wrapper {
   appearance: none;
   border: 1px solid #FFF;
   padding: 12px 25px 11px;
+  letter-spacing: 0.03em;
   color: #FFF!important;
-  transition: all ease .3s;
   position: relative;
   text-align: center;
   border-radius: 500px;
@@ -1959,6 +1959,32 @@ div.button-wrapper {
     transform: translateY(-2px);
     background-color: #FFF;
     color: #000!important;
+  }
+  &:focus {
+    outline: 1px dotted $color_primary;
+  }
+}
+
+.button-outline-blue {
+  display: inline-block;
+  min-width: 125px;
+  text-decoration: none!important;
+  appearance: none;
+  border: 2px solid $color_primary;
+  letter-spacing: 0.03em;
+  padding: 9px 25px 8px;
+  color: $color_primary!important;
+  font-weight: 600;
+  position: relative;
+  text-align: center;
+  border-radius: 500px;
+  box-shadow: none;
+  background-color: transparent;
+  transition: all ease .3s;
+  &:hover, &:focus {
+    opacity: 1!important;
+    background-color: $color_primary;
+    color: #FFF!important;
   }
   &:focus {
     outline: 1px dotted $color_primary;
@@ -3039,11 +3065,18 @@ div.button-wrapper {
 .section-post-feeds {
   padding-top: 80px;
   padding-bottom: 80px;
+  .intro {
+    margin-bottom: 40px; 
+  }
   .section-title {
-    margin-bottom: 40px;
     h2 {
       margin: 0 0;
       color: $color_secondary;
+    }
+  }
+  .section-intro {
+    p {
+      margin-top: 0;
     }
   }
   figure {
@@ -3051,6 +3084,24 @@ div.button-wrapper {
     overflow: hidden;
     border-radius: 10px;
   }
+
+  .details {
+    h3 {
+      margin: 0 0 5px;
+    }
+    h3, h3 a {
+      color: $color_secondary;
+      font-size: 25px;
+      line-height: 1.3;
+    }
+    .event-date {
+      color: $color_blue;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      margin-block-end: 10px;
+    }
+  }
+
   .post-feeds {
     display: flex;
     flex-wrap: wrap;
@@ -3062,23 +3113,6 @@ div.button-wrapper {
       width: calc(50% - 1em);
       @media screen and (min-width: 1025px) {
         width: calc(50% - 3em);
-      }
-    }
-
-    .details {
-      h3 {
-        margin: 0 0 5px;
-      }
-      h3, h3 a {
-        color: $color_secondary;
-        font-size: 25px;
-        line-height: 1.3;
-      }
-      .event-date {
-        color: $color_blue;
-        font-weight: 600;
-        letter-spacing: 0.03em;
-        margin-block-end: 10px;
       }
     }
     .leftCol {
@@ -3173,6 +3207,50 @@ div.button-wrapper {
         ul.feeds > li:first-child {
           border-top: 1px solid #CCC;
         }
+      }
+    }
+  }
+
+  &.post-webinars {
+    padding-top: 20px;
+    .intro {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  .webinars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    @media screen and (max-width: 1200px) {
+      justify-content: center;
+    }
+    .video-frame {
+      margin:0 0 10px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      padding-bottom: 56%;
+      background-color: #000;
+      iframe {
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%!important;
+        height: 100%!important;
+      }
+    }
+    .webinar {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      width: calc(33.333% - 2em);
+      @media screen and (max-width: 1200px) {
+        width: calc(50% - 2em);
+      }
+      @media screen and (max-width:500px) {
+        width: calc(100% - 2em);
       }
     }
   }

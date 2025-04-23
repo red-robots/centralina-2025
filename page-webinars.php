@@ -21,130 +21,225 @@ get_header();
         'orderby' => 'meta_value_num',
         'order' => 'ASC',
       );
-      $events = new WP_Query($event_args);
-    }
-    ?>
+      $events = new WP_Query($event_args); ?>
 
-    <?php if($section_title1 || $events->have_posts()) { 
-      $count = $events->found_posts;
-    ?>
-    <section class="section-post-feeds post-<?php echo $post_type1 ?>">
-      <div class="wrapper">
-      <?php if($section_title1) { ?>
-        <div class="section-title"><h2><?php echo $section_title1 ?></h2></div>
-      <?php } ?>
-      <?php if ( $events->have_posts() ) {  ?>
-        <div class="post-feeds">
-          <div class="leftCol">
-            <?php $i=1; while ( $events->have_posts() ) : $events->the_post(); 
-              $id = get_the_ID();
-              $thumbID = get_post_thumbnail_id($id);
-              $img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
-              $imgAlt = ($img) ? get_the_title($thumbID) : '';
-              $start_date = get_field('start_date', $id);
-              $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
-              $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
-              ?>
-              <?php if ($i==1) { ?>
-              <figure class="post-image">
-                <a href="<?php echo get_permalink() ?>">
-                  <img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>">
-                </a>
-              </figure>
-              <div class="details">
-                <?php if ($start_date) { ?>
-                <div class="event-date"><?php echo $start_date ?></div>
-                <?php } ?>
-                <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
-                <?php if ( get_the_content() ) { ?>
-                <div class="excerpt">
-                  <?php echo shortenText($content, 250, ' '); ?>
-                </div>
-                <?php } ?>
-              </div>
-              <?php } ?>
-            <?php $i++; endwhile; wp_reset_postdata(); ?>
+      <?php if($section_title1 || $events->have_posts()) {  ?>
+      <section class="section-post-feeds post-<?php echo $post_type1 ?>">
+        <div class="wrapper">
+          <div class="intro">
+            <?php if($section_title1) { ?>
+              <div class="section-title"><h2><?php echo $section_title1 ?></h2></div>
+            <?php } ?>
+            <?php if($intro_text1) { ?>
+              <div class="section-intro"><?php echo anti_email_spam($intro_text1); ?></div>
+            <?php } ?>
           </div>
-
-          <div class="rightCol">
-            <?php if ($staff_assigned) { 
-              $pid = $staff_assigned->ID;
-              $name = $staff_assigned->post_title;
-              $job = get_field('title', $pid);
-              $email = get_field('email', $pid);
-              $photo = get_field('photo', $pid);
-              $row_class = ($name && $photo) ? 'twocol':'onecol';
-            ?>
-            <div class="staff-infocard">
-              <div class="card-gradient">
-                <ul class="listing">
-                  <li class="<?php echo $row_class ?>">
-                    <figure class="photo">
-                      <?php if ( isset($photo['url']) ) { ?>
-                      <img src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>" />
-                      <?php } else { ?>
-                      <span class="no-image"><i class="fa-solid fa-user"></i></span>
-                      <?php } ?>
-                    </figure>
-
-                    <?php if ($name) { ?>
-                    <div class="info">
-                      <h3 class="name"><?php echo $name ?></h3>
-                      <?php if ($job) { ?>
-                      <div class="job"><?php echo $job ?></div>
-                      <?php } ?>
-                      <?php if ($email) { ?>
-                      <div class="email"><a href="mailto:<?php echo antispambot($email,1) ?>"><?php echo antispambot($email) ?></a></div>
-                      <?php } ?>
+          <?php if ( $events->have_posts() ) {  ?>
+            <div class="post-feeds">
+              <div class="leftCol">
+                <?php $i=1; while ( $events->have_posts() ) : $events->the_post(); 
+                  $id = get_the_ID();
+                  $thumbID = get_post_thumbnail_id($id);
+                  $img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
+                  $imgAlt = ($img) ? get_the_title($thumbID) : '';
+                  $start_date = get_field('start_date', $id);
+                  $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
+                  $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
+                  ?>
+                  <?php if ($i==1) { ?>
+                  <figure class="post-image">
+                    <a href="<?php echo get_permalink() ?>">
+                      <img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>">
+                    </a>
+                  </figure>
+                  <div class="details">
+                    <?php if ($start_date) { ?>
+                    <div class="event-date"><?php echo $start_date ?></div>
+                    <?php } ?>
+                    <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
+                    <?php if ( get_the_content() ) { ?>
+                    <div class="excerpt">
+                      <?php echo shortenText($content, 250, ' '); ?>
                     </div>
                     <?php } ?>
-                  </li>
+                  </div>
+                  <?php } ?>
+                <?php $i++; endwhile; wp_reset_postdata(); ?>
+              </div>
+
+              <div class="rightCol">
+                <?php if ($staff_assigned) { 
+                  $pid = $staff_assigned->ID;
+                  $name = $staff_assigned->post_title;
+                  $job = get_field('title', $pid);
+                  $email = get_field('email', $pid);
+                  $photo = get_field('photo', $pid);
+                  $row_class = ($name && $photo) ? 'twocol':'onecol';
+                ?>
+                <div class="staff-infocard">
+                  <div class="card-gradient">
+                    <ul class="listing">
+                      <li class="<?php echo $row_class ?>">
+                        <figure class="photo">
+                          <?php if ( isset($photo['url']) ) { ?>
+                          <img src="<?php echo $photo['url'] ?>" alt="<?php echo $photo['title'] ?>" />
+                          <?php } else { ?>
+                          <span class="no-image"><i class="fa-solid fa-user"></i></span>
+                          <?php } ?>
+                        </figure>
+
+                        <?php if ($name) { ?>
+                        <div class="info">
+                          <h3 class="name"><?php echo $name ?></h3>
+                          <?php if ($job) { ?>
+                          <div class="job"><?php echo $job ?></div>
+                          <?php } ?>
+                          <?php if ($email) { ?>
+                          <div class="email"><a href="mailto:<?php echo antispambot($email,1) ?>"><?php echo antispambot($email) ?></a></div>
+                          <?php } ?>
+                        </div>
+                        <?php } ?>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <?php } ?>
+                <ul class="feeds">
+                <?php $n=1; while ( $events->have_posts() ) : $events->the_post(); 
+                  $id = get_the_ID();
+                  $thumbID = get_post_thumbnail_id($id);
+                  $img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
+                  $imgAlt = ($img) ? get_the_title($thumbID) : '';
+                  $start_date = get_field('start_date', $id);
+                  $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
+                  $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
+                ?>
+                  <?php if ($n>1) { ?>
+                    <li class="item">
+                      <div class="inside">
+                        <?php if ($img) { ?>
+                        <figure class="post-image">
+                          <a href="<?php echo get_permalink() ?>">
+                            <img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>">
+                          </a>
+                        </figure> 
+                        <?php } ?>
+
+                        <div class="details">
+                          <?php if ($start_date) { ?>
+                          <div class="event-date"><?php echo $start_date ?></div>
+                          <?php } ?>
+                          <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
+                          <?php if ( get_the_content() ) { ?>
+                          <div class="excerpt">
+                            <?php echo shortenText($content, 60, ' '); ?>
+                          </div>
+                          <?php } ?>
+                        </div>
+                      </div>
+                    </li>
+                  <?php } ?>
+                <?php $n++; endwhile; wp_reset_postdata(); ?>
                 </ul>
               </div>
             </div>
-            <?php } ?>
-            <ul class="feeds">
-            <?php $n=1; while ( $events->have_posts() ) : $events->the_post(); 
-              $id = get_the_ID();
-              $thumbID = get_post_thumbnail_id($id);
-              $img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
-              $imgAlt = ($img) ? get_the_title($thumbID) : '';
-              $start_date = get_field('start_date', $id);
-              $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
-              $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
-            ?>
-              <?php if ($n>1) { ?>
-                <li class="item">
-                  <div class="inside">
-                    <?php if ($img) { ?>
-                    <figure class="post-image">
-                      <a href="<?php echo get_permalink() ?>">
-                        <img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>">
-                      </a>
-                    </figure> 
-                    <?php } ?>
-
-                    <div class="details">
-                      <?php if ($start_date) { ?>
-                      <div class="event-date"><?php echo $start_date ?></div>
-                      <?php } ?>
-                      <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
-                      <?php if ( get_the_content() ) { ?>
-                      <div class="excerpt">
-                        <?php echo shortenText($content, 60, ' '); ?>
-                      </div>
-                      <?php } ?>
-                    </div>
-                  </div>
-                </li>
-              <?php } ?>
-            <?php $n++; endwhile; wp_reset_postdata(); ?>
-            </ul>
-          </div>
+          <?php } ?>
         </div>
+      </section>  
       <?php } ?>
-      </div>
-    </section>  
+    <?php } ?>
+
+
+    <?php  
+    $section_title2 = get_field('section_title2');
+    $intro_text2 = get_field('intro_text2');
+    $post_type2 = get_field('post_type2');
+    if($post_type2) {
+      $webinar_args = array(
+        'posts_per_page'   => 6,
+        'post_type'        => $post_type2,
+        'post_status'      => 'publish',
+        'meta_key' => 'start_date',
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC',
+        'paged'     => $paged,
+      );
+      $webinars = new WP_Query($webinar_args);
+      if( $section_title2 || $webinars->have_posts() ) { ?>
+      <section class="section-post-feeds post-<?php echo $post_type2 ?>">
+        <div class="wrapper">
+          <div class="intro">
+            <?php if($section_title2) { ?>
+              <div class="section-title"><h2><?php echo $section_title2 ?></h2></div>
+            <?php } ?>
+            <?php if($intro_text2) { ?>
+              <div class="section-intro"><?php echo anti_email_spam($intro_text2); ?></div>
+            <?php } ?>
+          </div>
+          <?php if ( $webinars->have_posts() ) {  ?>
+          <div class="webinars-feeds">
+            <div class="webinars">
+            <?php while ( $webinars->have_posts() ) : $webinars->the_post(); 
+              $id = get_the_ID();
+              $videoURL = get_field('video_link', $id);
+              $w_start_date = get_field('start_date', $id);
+              $w_start_date = ($w_start_date) ? date('F j, Y', strtotime($w_start_date)) : '';
+              ?>
+              <div class="webinar">
+                <?php if ($videoURL) { 
+                  /* YOUTUBE VIDEO */
+                  $youtubeId = extractYoutubeId($videoURL);
+                  $embed_url = '';
+                  if($youtubeId) {
+                    $embed_url = 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0'; 
+                    //$mainImage = 'https://i.ytimg.com/vi/'.$youtubeId.'/maxresdefault.jpg';
+                  }
+
+                  /* VIMEO VIDEO */ 
+                  $vimeoId = extractVimdeoId($videoURL);
+                  
+                  // if( strpos( strtolower($videoURL), 'vimeo.com') !== false ) { 
+                  //   $vimeo_parts = explode("/",$videoURL);
+                  //   $parts = ($vimeo_parts && array_filter($vimeo_parts) ) ? array_filter($vimeo_parts) : '';
+                  //   $vimeoId = ($parts) ?  preg_replace('/\s+/', '', end($parts)) : '';
+                  //   $vimeoData = ($vimeoId) ? get_vimeo_data($vimeoId) : '';
+                  //   $data = json_decode( file_get_contents( 'https://vimeo.com/api/oembed.json?url=' . $videoURL ) );
+                  //   $vimeoImage = ($data) ? $data->thumbnail_url : '';
+                  // }
+                ?>
+                <figure class="video-frame">
+                  <?php if ($youtubeId) { ?>
+                    <iframe class="videoIframe iframe-youtube" data-vid="youtube" src="<?php echo $embed_url; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <?php } ?>
+
+                  <?php if ($vimeoId) { ?>
+                    <iframe class="videoIframe iframe-vimeo" data-vid="vimeo" src="https://player.vimeo.com/video/<?php echo $vimeoId?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                  <?php } ?>
+                </figure>
+                <?php } ?>
+
+                <div class="details">
+                  <?php if ($start_date) { ?>
+                  <div class="event-date"><?php echo $start_date ?></div>
+                  <?php } ?>
+                  <h3 class="event-name"><?php echo get_the_title() ?></h3>
+                  <?php if ( get_the_content() ) { ?>
+                  <div class="excerpt">
+                    <?php the_content(); ?>
+                  </div>
+                  <?php } ?>
+                  <?php if ($videoURL) { ?>
+                  <a href="<?php echo $videoURL ?>" data-fancybox class="button-outline-blue button-watch">Watch</a>
+                  <?php } ?>
+                </div>
+              </div>
+            <?php endwhile; wp_reset_postdata(); ?>
+            </div>
+          </div>
+          <?php } ?>
+        </div>
+      </section>
+      <?php } ?>
     <?php } ?>
 
   <?php endwhile; ?>
