@@ -38,7 +38,21 @@
     }
   }
 }
-
+@mixin regular_link_style() {
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: $color_link;
+    &:hover, &:focus {
+      text-decoration: underline;
+      color: $color_secondary;
+    }
+    &:focus {
+      outline: 1px dotted $color_primary;
+    }
+  }
+}
+@include regular_link_style();
 div,h1,h2,h3,h4,h5,h6,p,li,a,span,strong {
   overflow-wrap: normal;
   word-wrap: normal;
@@ -85,6 +99,7 @@ body {
 .clear:after {
   clear: both;
 }
+
 a,input,button,textarea {
   transition: all ease .3s;
 }
@@ -100,13 +115,6 @@ h4 { font-size: 18px; }
 h5 { font-size: 16px; }
 h6 { font-size: 13px; }
 
-a {
-  display: inline-block;
-  color: shade($color_secondary,30%);
-  &:hover, &:focus {
-    color: tint($color_secondary,30%);
-  }
-}
 
 .sr:not(:focus):not(:active) {
   clip: rect(0 0 0 0); 
@@ -2007,12 +2015,13 @@ div.button-wrapper {
           display: inline-block;
           text-decoration: underline;
           transition: all ease .3s;
-          color: $color_link;
-          &:hover, &:focus {
-            opacity: 0.75;
-            transform: translateY(-2px);
-          }
+          // color: $color_link;
+          // &:hover, &:focus {
+          //   opacity: 0.75;
+          //   transform: translateY(-2px);
+          // }
         }
+        @include regular_link_style();
       }
       &.imageBlock {
         .image {
@@ -2383,19 +2392,25 @@ div.button-wrapper {
           }
         }
         p a {
-          color: #0064B1!important;
-          text-decoration: underline!important;
-          &:hover, &:focus {
-            color: #0896db!important;
-            text-decoration: none!important;
-          }
-          &:focus {
-            outline: 1px dotted #0064B1!important;
+          // color: #0064B1!important;
+          // text-decoration: underline!important;
+          // &:hover, &:focus {
+          //   color: #0896db!important;
+          //   text-decoration: none!important;
+          // }
+          // &:focus {
+          //   outline: 1px dotted #0064B1!important;
+          // }
+        }
+        p {
+          @include regular_link_style();
+          a {
+            text-decoration: underline;
           }
         }
         .contact-item a {
           &:hover, &:focus {
-            color: #0896db!important;
+            color: tint($color_secondary,30%);
           }
         }
       }
