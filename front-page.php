@@ -51,10 +51,13 @@ get_header();
   <?php  
   $row2_intro = get_field('row2_intro');
   $row2_buttons = get_field('row2_buttons');
-  $row2_data = get_field('row2_accordion');
   $row2_feat_image = get_field('row2_featured_image');
-  $row2_title = (isset($row2_data['title']) && $row2_data['title']) ? $row2_data['title'] : '';
-  $row2_accordion = (isset($row2_data['accordion_items']) && $row2_data['accordion_items']) ? $row2_data['accordion_items'] : '';
+  //$row2_data = get_field('row2_accordion');
+  //$row2_title = (isset($row2_data['title']) && $row2_data['title']) ? $row2_data['title'] : '';
+  ;//$row2_accordion = (isset($row2_data['accordion_items']) && $row2_data['accordion_items']) ? $row2_data['accordion_items'] : '';
+  $row2_links = get_field('row2_links');
+  $row2_title = (isset($row2_links['title']) && $row2_links['title']) ? $row2_links['title'] : '';
+  $row2_link_list = (isset($row2_links['links']) && $row2_links['links']) ? $row2_links['links'] : '';
   ?>
   <?php if ($row2_intro || $row2_accordion) { ?>
   <section class="row2-section intro-section">
@@ -79,7 +82,7 @@ get_header();
         </div>
         <?php } ?>
         
-        <?php if ($row2_accordion) { ?>
+        <?php if ($row2_link_list || $row2_feat_image) { ?>
         <div class="fcol fcol2">
           <?php if ($row2_feat_image) { ?>
           <div class="featured-image clear">
@@ -89,27 +92,23 @@ get_header();
           </div>
           <?php } ?>
 
-          <?php if ($row2_title || $row2_accordion) { ?>
+          <?php if ($row2_title || $row2_link_list) { ?>
           <div class="infobox">
             <?php if ($row2_title) { ?>
             <h3 class="h3"><span><?php echo $row2_title ?></span></h3>
             <?php } ?>
 
-            <?php if ($row2_accordion) { ?>
+            <?php if ($row2_link_list) { ?>
             <div class="collapsible-wrapper">
               <ul class="collapsible">
-              <?php $i=1; foreach ($row2_accordion as $a) { 
-                $a_title = $a['title'];
-                $a_details = $a['details'];
-                $panelId = 'collapsible-item--' . $i;
+              <?php $i=1; foreach ($row2_link_list as $a) { 
+                $btn = ( isset($a['button']) && $a['button'] ) ? $a['button'] : '';
+                $a_title = ( isset($btn['title']) && $btn['title'] ) ? $btn['title'] : '';
+                $a_link = ( isset($btn['url']) && $btn['url'] ) ? $btn['url'] : '';
+                $a_target = ( isset($btn['target']) && $btn['target'] ) ? $btn['target'] : '_self';
                 if($a_title) { ?>
                 <li class="collapsible-item">
-                  <button class="collapsible-title" aria-expanded="false" aria-controls="<?php echo $panelId ?>"><span><?php echo $a_title ?></span><i class="arrow"></i></button>
-                  <div id="<?php echo $panelId ?>" class="collapsible-content">
-                    <?php if ($a_details) { ?>
-                    <?php echo anti_email_spam($a_details); ?>  
-                    <?php } ?>
-                  </div>
+                  <a href="<?php echo $a_link ?>" target="<?php echo $a_target ?>" class="collapsible-title"><span><?php echo $a_title ?></span><i class="arrow"></i></a>
                 </li>
                 <?php $i++; } ?>
               <?php } ?>

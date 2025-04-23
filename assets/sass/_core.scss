@@ -100,6 +100,14 @@ h4 { font-size: 18px; }
 h5 { font-size: 16px; }
 h6 { font-size: 13px; }
 
+a {
+  display: inline-block;
+  color: shade($color_secondary,30%);
+  &:hover, &:focus {
+    color: tint($color_secondary,30%);
+  }
+}
+
 .sr:not(:focus):not(:active) {
   clip: rect(0 0 0 0); 
   clip-path: inset(50%);
@@ -1661,6 +1669,7 @@ body:not(.home) {
     appearance: none;
     border: none;
     text-decoration: none;
+    color: $color_primary;
     background-color: tint($color_secondary, 90%);
     font-weight: 600;
     line-height: 1.3;
