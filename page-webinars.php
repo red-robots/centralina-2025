@@ -232,7 +232,9 @@ get_header();
                     </div>
                     <?php } ?>
                     <?php if ($videoURL) { ?>
-                    <a href="<?php echo $videoURL ?>" data-fancybox class="button-outline-blue button-watch">Watch</a>
+                    <div class="button-wrap">
+                      <a href="<?php echo $videoURL ?>" data-fancybox class="button-outline-blue button-watch">Watch</a>
+                    </div>
                     <?php } ?>
                   </div>
                 </div>
