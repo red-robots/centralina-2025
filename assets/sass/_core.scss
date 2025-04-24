@@ -182,6 +182,44 @@ h6 { font-size: 13px; }
     outline: 1px dotted $color_primary;
   }
 }
+.btn-solid {
+  display: inline-block;
+  text-decoration: none;
+  appearance: none;
+  border: 2px solid $color_secondary;
+  border-radius: 300px;
+  padding: 0.6em 1.5em;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #FFF;
+  transition: all ease .4s;
+  background-color: $color_secondary;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  &:after {
+    content:"";
+    display: block;
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: 0;
+    left: -30vw;
+    opacity: 0;
+    background: $color_primary;
+    z-index: -1;
+    transform: scale(1.5) skewX(-15deg);
+    transition: all ease .6s;
+  }
+  &:hover, &:focus {
+    color: $color_secondary;
+    background: #FFF;
+  }
+  &:focus {
+    outline: 1px dotted $color_secondary;
+  }
+}
 
 .wrapper {
   max-width: $wrapper;
@@ -3252,6 +3290,19 @@ div.button-wrapper {
       @media screen and (max-width:500px) {
         width: calc(100% - 2em);
       }
+      &.fadeIn {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name: fadeIn;
+      }
+    }
+  }
+  .load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    .more-button.btn-solid {
+      min-width: 200px;
     }
   }
 }
