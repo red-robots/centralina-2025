@@ -19,15 +19,44 @@
         <?php foreach ($cards as $c) { 
           $title = $c['title'];
           $details = $c['text'];
+          $image_video = $c['image_video'];
           $image = $c['image'];
+          $videoUrl = $c['video'];
           if($title || $details || $image) { ?>
           <div class="infoCard">
             <div class="inner">
-              <?php if ($image) { ?>
-              <figure class="image">
-                <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
-              </figure>
+              <?php if ($image_video=='image') { ?>
+                <?php if ($image) { ?>
+                <figure class="image">
+                  <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['title'] ?>" />
+                </figure>
+                <?php } ?>
+              <?php } else { ?>
+                <?php if ($videoUrl) { 
+                  $youtubeId = extractYoutubeId($videoUrl);
+                  $vimeoId = extractVimdeoId($videoUrl); 
+
+                  $youtube_embed = ($youtubeId) ? 'https://www.youtube.com/embed/'.$youtubeId.'?version=3&rel=0&loop=0' : '';
+                  $vimeo_embed = ($vimeoId) ? 'https://player.vimeo.com/video/'.$vimeoId : '';
+                  ?>
+                  <?php if ($youtubeId) { ?>
+                    <div class="video-frame">
+                      <div class="video-inner">
+                        <iframe class="videoIframe iframe-youtube" data-vid="youtube" src="<?php echo $youtube_embed; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  <?php } ?>
+
+                  <?php if ($vimeoId) { ?>
+                    <div class="video-frame">
+                      <div class="video-inner">
+                        <iframe class="videoIframe iframe-vimeo" data-vid="vimeo" src="<?php echo $vimeo_embed?>" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  <?php } ?>
+                <?php } ?>
               <?php } ?>
+              
               <?php if($title || $details) { ?>
               <div class="infoText">
                 <?php if ($title) { ?>

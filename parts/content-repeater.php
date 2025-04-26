@@ -12,4 +12,5 @@
   include( locate_template('parts-flexible/profileBlock.php') ); 
   include( locate_template('parts-flexible/two_column_text_image.php') ); 
   include( locate_template('parts-flexible/intro_and_two_column.php') ); 
+  include( locate_template('parts-flexible/video_gallery.php') ); 
 ?>

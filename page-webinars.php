@@ -45,6 +45,11 @@ get_header();
                   $start_date = get_field('start_date', $id);
                   $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
                   $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
+                  $content = ($content) ? shortenText($content, 250, ' ') : '';
+                  $excerpt = get_field('excerpt', $id);
+                  if($excerpt) {
+                    $content = $excerpt;
+                  }
                   ?>
                   <?php if ($i==1) { ?>
                   <figure class="post-image">
@@ -59,7 +64,7 @@ get_header();
                     <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
                     <?php if ( get_the_content() ) { ?>
                     <div class="excerpt">
-                      <?php echo shortenText($content, 250, ' '); ?>
+                      <?php echo $content; ?>
                     </div>
                     <?php } ?>
                   </div>
@@ -113,6 +118,11 @@ get_header();
                   $start_date = get_field('start_date', $id);
                   $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
                   $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
+                  $content = ($content) ? shortenText($content, 60, ' ') : '';
+                  $excerpt = get_field('excerpt', $id);
+                  if($excerpt) {
+                    $content = $excerpt;
+                  }
                 ?>
                   <?php if ($n>1) { ?>
                     <li class="item">
@@ -132,7 +142,7 @@ get_header();
                           <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
                           <?php if ( get_the_content() ) { ?>
                           <div class="excerpt">
-                            <?php echo shortenText($content, 60, ' '); ?>
+                            <?php echo $content; ?>
                           </div>
                           <?php } ?>
                         </div>

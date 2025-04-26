@@ -167,6 +167,20 @@ jQuery(document).ready(function ($) {
     buttons: ['fullScreen', 'close'],
     hash: false
   });
+
+  if ($('.repeatable--cards_pattern_background .infoCard').length) {
+    $('.repeatable--cards_pattern_background .infoCard').each(function () {
+      if ($(this).find('a.button-element').length) {
+        $(this).find('a.button-element').each(function () {
+          var link = $(this).attr('href');
+
+          if (link.includes('youtu') || link.includes('youtube') || link.includes('vimeo')) {
+            $(this).attr('data-fancybox', true);
+          }
+        });
+      }
+    });
+  }
 });
 "use strict";
 
