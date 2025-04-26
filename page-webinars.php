@@ -173,7 +173,7 @@ get_header();
         'post_status'      => 'publish',
         'meta_key' => 'start_date',
         'orderby' => 'meta_value_num',
-        'order' => 'ASC',
+        'order' => 'DESC',
         'paged'     => $paged,
       );
       $webinars = new WP_Query($webinar_args);
