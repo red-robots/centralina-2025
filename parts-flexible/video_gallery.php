@@ -24,7 +24,7 @@
   <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?><?php echo $has_pattern ?>">
     <div class="wrapper">
       <?php if ($section_intro) { ?>
-      <div class="section-intro">
+      <div class="section-intro section-intro-center">
         <?php echo anti_email_spam($section_intro); ?>
       </div>  
       <?php } ?>

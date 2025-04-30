@@ -1,4 +1,5 @@
 <?php if( get_row_layout() == 'cards_pattern_background' ) {
+  $section_intro = get_sub_field('section_intro');
   $numcols = get_sub_field('numcols');
   $numcols = ($numcols) ? $numcols : 3;
   $cards = get_sub_field('cards');
@@ -15,6 +16,11 @@
   </style>
   <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?><?php echo $has_pattern ?>">
     <div class="wrapper">
+      <?php if ($section_intro) { ?>
+      <div class="section-intro-center">
+        <?php echo anti_email_spam($section_intro); ?>
+      </div>  
+      <?php } ?>
       <div class="infoCards numcols-<?php echo $numcols ?>">
         <?php foreach ($cards as $c) { 
           $title = $c['title'];

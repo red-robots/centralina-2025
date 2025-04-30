@@ -103,3 +103,10 @@
   width: 65%;
 }
 
+[data-layout="video_gallery"] [data-name="bgpattern_video"],
+[data-layout="video_gallery"] [data-name="bgcolor_video"],
+[data-layout="video_gallery"] [data-name="textcolor_video"] {
+  width: 33.333%;
+  float: left;
+  clear: none!important;
+}

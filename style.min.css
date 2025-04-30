@@ -1570,6 +1570,8 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .button-outline-blue{display:inline-block;min-width:125px;text-decoration:none !important;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:2px solid #191e51;letter-spacing:.03em;padding:9px 25px 8px;color:#191e51 !important;font-weight:600;position:relative;text-align:center;border-radius:500px;-webkit-box-shadow:none;box-shadow:none;background-color:transparent;-webkit-transition:all ease .3s;transition:all ease .3s}
 .button-outline-blue:hover,.button-outline-blue:focus{opacity:1 !important;background-color:#191e51;color:#fff !important}
 .button-outline-blue:focus{outline:1px dotted #191e51}
+.section-intro-center{max-width:1080px;width:100%;margin:0 auto 40px;text-align:center}
+.section-intro-center h2{margin:0 0 10px;font-size:3rem;font-weight:600;line-height:1.1;letter-spacing:.02em}
 .repeatable .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .repeatable--intro .wrapper{max-width:1000px;text-align:center;padding-top:100px;padding-bottom:100px}
 .repeatable--intro .h2{color:#009c89;margin:0}
@@ -1677,6 +1679,8 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .flexible-content-wrapper:has(.repeatable--two_column_contact_info) .repeatable--intro .wrapper{padding-bottom:40px}
 .repeatable--cards_pattern_background{position:relative}
 .repeatable--cards_pattern_background.has-pattern:after{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background-image:url("images/pattern-logo.png");background-size:100% 100%;background-repeat:repeat-x;background-position:top center;opacity:.75}
+.repeatable--cards_pattern_background .section-intro-center{color:#fff}
+.repeatable--cards_pattern_background .section-intro-center h2,.repeatable--cards_pattern_background .section-intro-center h3,.repeatable--cards_pattern_background .section-intro-center h4,.repeatable--cards_pattern_background .section-intro-center h5,.repeatable--cards_pattern_background .section-intro-center h6,.repeatable--cards_pattern_background .section-intro-center p{color:#fff !important}
 .repeatable--cards_pattern_background .wrapper{max-width:100%;margin:0;padding:70px 30px;position:relative;z-index:10}
 .repeatable--cards_pattern_background .infoCards{max-width:1480px;width:100%;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .repeatable--cards_pattern_background .infoCards .infoCard{width:25%;padding:clamp(15px,1.5vw,30px)}
@@ -1696,8 +1700,6 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--video_gallery{position:relative}
 .repeatable--video_gallery.has-pattern:after{content:"";display:block;width:100%;height:100%;position:absolute;top:0;left:0;background-image:url("images/pattern-logo.png");background-size:100% 100%;background-repeat:repeat-x;background-position:top center;opacity:.75}
 .repeatable--video_gallery .wrapper{max-width:100%;margin:0;padding:70px 30px;position:relative;z-index:10}
-.repeatable--video_gallery .section-intro{max-width:1000px;width:100%;margin:0 auto 40px;text-align:center}
-.repeatable--video_gallery .section-intro h2{margin:0 0 10px;font-size:3rem;font-weight:600;line-height:1.1;letter-spacing:.02em}
 .repeatable--video_gallery .infoCards{max-width:1480px;width:100%;margin:0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}
 .repeatable--video_gallery .infoCards .infoCard{width:25%;padding:clamp(15px,1.5vw,30px)}
 .repeatable--video_gallery .infoCards .inner{height:100%;background:#fff;border-radius:10px;overflow:hidden;-webkit-box-shadow:0 10px 25px rgba(0,0,0,.25);box-shadow:0 10px 25px rgba(0,0,0,.25);border:5px solid #fff}
