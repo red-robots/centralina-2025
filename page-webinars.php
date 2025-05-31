@@ -73,17 +73,18 @@ get_header();
               </div>
 
               <div class="rightCol">
-                <?php if ($staff_assigned) { 
-                  $pid = $staff_assigned->ID;
-                  $name = $staff_assigned->post_title;
-                  $job = get_field('title', $pid);
-                  $email = get_field('email', $pid);
-                  $photo = get_field('photo', $pid);
-                  $row_class = ($name && $photo) ? 'twocol':'onecol';
-                ?>
+                <?php if ($staff_assigned) { ?>
                 <div class="staff-infocard">
                   <div class="card-gradient">
                     <ul class="listing">
+                    <?php foreach ($staff_assigned as $staff) { 
+                      $pid = $staff->ID;
+                      $name = $staff->post_title;
+                      $job = get_field('title', $pid);
+                      $email = get_field('email', $pid);
+                      $photo = get_field('photo', $pid);
+                      $row_class = ($name && $photo) ? 'twocol':'onecol';
+                      ?>
                       <li class="<?php echo $row_class ?>">
                         <figure class="photo">
                           <?php if ( isset($photo['url']) ) { ?>
@@ -105,6 +106,7 @@ get_header();
                         </div>
                         <?php } ?>
                       </li>
+                    <?php } ?>
                     </ul>
                   </div>
                 </div>
