@@ -5,7 +5,7 @@
   $disable_section = get_sub_field('disable_section');
   $is_visible = ($disable_section) ? false : true;
   if( $is_visible && ($column_left || $column_right || $text_quote) ) { ?>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
     <div class="wrapper">
       <div class="flexwrap">
         <?php if ($column_left || $text_quote) { ?>

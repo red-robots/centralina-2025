@@ -6,21 +6,21 @@
   //$disable_section = get_sub_field('disable_section');
   //$is_visible = ($disable_section) ? false : true;
   if( $text_content ) { ?>
-  <style type="text/css">
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .fullwidth {
-      background-color: <?php echo $bgcolor ?>;
-      color: <?php echo $textcolor ?>;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> *:not(a):not(a span) {
-      color: <?php echo $textcolor ?>!important;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .button-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 1em;
-    }
-  </style>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+    <style type="text/css">
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .fullwidth {
+        background-color: <?php echo $bgcolor ?>;
+        color: <?php echo $textcolor ?>;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> *:not(a):not(a span) {
+        color: <?php echo $textcolor ?>!important;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .button-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+      }
+    </style>
     <div class="fullwidth">
       <div class="wrapper">
         <div class="textblock">

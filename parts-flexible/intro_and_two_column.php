@@ -6,7 +6,7 @@
   $disable_section = get_sub_field('disable_section');
   $is_visible = ($disable_section) ? false : true;
   if( $is_visible && ($column_info) ) { ?>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
     <div class="wrapper">
       <?php if ($intro) { ?>
       <div class="intro"><?php echo anti_email_spam($intro); ?></div>

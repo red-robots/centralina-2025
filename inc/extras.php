@@ -475,19 +475,38 @@ add_action('acf/input/admin_footer', 'bella_acf_input_admin_footer');
 // add new buttons
 add_filter( 'mce_buttons', 'myplugin_register_buttons' );
 function myplugin_register_buttons( $buttons ) {
-  array_push( $buttons, 'edbutton1', 'custom_class' );
+  array_push( $buttons, 'edbutton1');
   return $buttons;
 }
  
 // Load the TinyMCE plugin : editor_plugin.js (wp2.5)
 add_filter( 'mce_external_plugins', 'myplugin_register_tinymce_javascript' );
 function myplugin_register_tinymce_javascript( $plugin_array ) {
-  //$plugin_array['checklistbutton'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
-  $plugin_array['highlightblock'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
   $plugin_array['ctabutton'] = get_stylesheet_directory_uri() . '/assets/js/custom/custom-tinymce.js';
   return $plugin_array;
 }
 
 
+function get_flexible_templates() {
+  $partsDIR = "parts-flexible";
+  $dir = get_template_directory() . "/".$partsDIR."/";
+  $allFiles = scandir($dir,1);
+  $files = array_diff($allFiles, array('.', '..'));
+  $templates = [];
+  if($files) {
+    foreach($files as $file) {
+      if($file) {
+        if ( (strpos($file, 'bak') !== false) || (strpos($file, 'copy') !== false) ) {
+          //Skip....
+        } else {
+          if (strpos($file, '.php') !== false) {
+            $templates[] = $partsDIR . "/" . $file;
+          }
+        }
+      }
+    }
+  }
+  return $templates;
+}
 
 

@@ -60,10 +60,13 @@ add_filter( 'login_headertext', 'bella_login_logo_url_title' );
 /*-------------------------------------
 	Adds Options page for ACF.
 ---------------------------------------*/
-if( function_exists('acf_add_options_page') ) {
-  $settings['page_title'] = __('Global Options');
-  acf_add_options_page($settings);
-}
+// if( function_exists('acf_add_options_page') ) {
+//   $settings['page_title'] = __('Global Options');
+//   acf_add_options_page($settings);
+// }
+add_action('acf/init', function() {
+  if( function_exists('acf_add_options_page') ) {acf_add_options_page();}
+});
 
 /*-------------------------------------
   Hide Front End Admin Menu Bar

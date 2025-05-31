@@ -10,18 +10,18 @@
   $disable_section = get_sub_field('disable_section');
   $is_visible = ($disable_section) ? false : true;
   if( $is_visible && $videos ) { ?>
-  <style>
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> {
-      background-color: <?php echo $bgcolor ?>;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro,
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro h2,
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro h3,
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro p {
-      color: <?php echo ($textcolor_video) ? $textcolor_video : '#000'; ?>;
-    }
-  </style>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?><?php echo $has_pattern ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?><?php echo $has_pattern ?>">
+    <style>
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> {
+        background-color: <?php echo $bgcolor ?>;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro,
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro h2,
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro h3,
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .section-intro p {
+        color: <?php echo ($textcolor_video) ? $textcolor_video : '#000'; ?>;
+      }
+    </style>
     <div class="wrapper">
       <?php if ($section_intro) { ?>
       <div class="section-intro section-intro-center">

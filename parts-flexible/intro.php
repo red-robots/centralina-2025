@@ -4,7 +4,7 @@
   $disable_section = get_sub_field('disable_section');
   $is_visible = ($disable_section) ? false : true;
   if( $is_visible && ($title || $details) ) { ?>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
     <div class="wrapper">
       <?php if ($title) { ?>
       <h2 class="h2"><?php echo $title ?></h2>

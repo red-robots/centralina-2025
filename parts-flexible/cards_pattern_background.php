@@ -9,12 +9,12 @@
   $disable_section = get_sub_field('disable_section');
   $is_visible = ($disable_section) ? false : true;
   if( $is_visible && $cards ) { ?>
-  <style>
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> {
-      background-color: <?php echo $bgcolor ?>;
-    }
-  </style>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?><?php echo $has_pattern ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?><?php echo $has_pattern ?>">
+    <style>
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> {
+        background-color: <?php echo $bgcolor ?>;
+      }
+    </style>
     <div class="wrapper">
       <?php if ($section_intro) { ?>
       <div class="section-intro-center">

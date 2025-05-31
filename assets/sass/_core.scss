@@ -3251,7 +3251,15 @@ div.button-wrapper {
       }
     }
   }
+
+  &.next-two_column_text_image > .wrapper {
+    padding-bottom: 30px;
+  }
+  &.prev-two_column_text_image > .wrapper {
+    padding-top: 30px;
+  }
 }
+
 .repeatable--intro_and_two_column {
   padding: 50px 30px;
   background-color: rgba($color_secondary, 10%);

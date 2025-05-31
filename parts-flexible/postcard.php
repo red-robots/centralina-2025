@@ -11,46 +11,46 @@
   $disable_section = get_sub_field('disable_section');
   $is_visible = ($disable_section) ? false : true;
   if( $is_visible && ($details || $featured_image) ) { ?>
-  <style>
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> {
-      background-color: <?php echo $bgcolor ?>;
-      color:<?php echo $textcolor ?>;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock h2,
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock h3,
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock p {
-      color:<?php echo $textcolor ?>;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock a {
-      color:<?php echo $textcolor ?>;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> h2 {
-      color:<?php echo $h2color ?>!important;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> ul {
-      margin: 0 0;
-      padding: 0 0 0 8px;
-      list-style: none;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> ul > li {
-      position: relative;
-      list-style: none;
-      margin: 20px 0;
-      padding-left: 16px;
-    }
-    .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> ul > li:before {
-      content:"";
-      display: block;
-      width: 7px;
-      height: 7px;
-      border-radius: 100px;
-      background-color: <?php echo $h2color ?>;
-      position: absolute;
-      top: 7px;
-      left: 0;
-    }
-  </style>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+    <style>
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> {
+        background-color: <?php echo $bgcolor ?>;
+        color:<?php echo $textcolor ?>;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock h2,
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock h3,
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock p {
+        color:<?php echo $textcolor ?>;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> .textBlock a {
+        color:<?php echo $textcolor ?>;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> h2 {
+        color:<?php echo $h2color ?>!important;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> ul {
+        margin: 0 0;
+        padding: 0 0 0 8px;
+        list-style: none;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> ul > li {
+        position: relative;
+        list-style: none;
+        margin: 20px 0;
+        padding-left: 16px;
+      }
+      .repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?> ul > li:before {
+        content:"";
+        display: block;
+        width: 7px;
+        height: 7px;
+        border-radius: 100px;
+        background-color: <?php echo $h2color ?>;
+        position: absolute;
+        top: 7px;
+        left: 0;
+      }
+    </style>
     <div class="flexwrap details-<?php echo $details_position ?> <?php echo $is_split ?>">
       <?php if ($details) { ?>
       <div class="flexcol textBlock">

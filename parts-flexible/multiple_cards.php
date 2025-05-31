@@ -6,7 +6,7 @@
   //$disable_section = get_sub_field('disable_section');
   //$is_visible = ($disable_section) ? false : true;
   if( $intro && $card_option ) { ?>
-  <section class="repeatable section-multiple-cards repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable section-multiple-cards repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
     <div class="wrapper">
       <div class="inner">
         <?php if ($intro) { ?>

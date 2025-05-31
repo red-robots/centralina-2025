@@ -15,7 +15,7 @@
   $section_class = ( ($listing_details || $list_post_type) && $description ) ? 'twocol':'onecol';
 
   if( ($listing_details || $list_post_type) || $description ) { ?>
-  <section class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
+  <section data-group="<?php echo get_row_layout() ?>" class="repeatable repeatable--<?php echo get_row_layout() ?> repeatable--<?php echo get_row_layout() ?>-<?php echo $ctr ?>">
     <div class="wrapper">
       <div class="flexwrap <?php echo $section_class ?>">
         <?php if ($listing_details) { ?>

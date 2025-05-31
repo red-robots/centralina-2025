@@ -1762,6 +1762,8 @@ div.button-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex
 .repeatable--two_column_text_image .flexwrap.half .imageCol figure{margin:0;position:relative}
 .repeatable--two_column_text_image .flexwrap.half .imageCol figure:after{content:"";display:block;width:99%;height:98.5%;position:absolute;top:15px;left:15px;border-radius:20px;background:#009c89}
 .repeatable--two_column_text_image .flexwrap.half .imageCol figure img{width:100%;height:auto;border-radius:15px;border:2px solid #fff;position:relative;z-index:5}
+.repeatable--two_column_text_image.next-two_column_text_image>.wrapper{padding-bottom:30px}
+.repeatable--two_column_text_image.prev-two_column_text_image>.wrapper{padding-top:30px}
 .repeatable--intro_and_two_column{padding:50px 30px;background-color:rgba(0,156,137,.1)}
 .repeatable--intro_and_two_column .intro{max-width:1000px;width:100%;margin:0 auto;text-align:center}
 .repeatable--intro_and_two_column .intro h2{color:#009c89}
