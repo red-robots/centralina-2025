@@ -1522,6 +1522,8 @@ body:not(.home) h1.page-title{margin-top:0}
 .site-footer .copyright-section.has-footer-logos .copyright{width:66%}
 .site-footer .copyright-section.has-footer-logos .footer-logo{width:32%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .site-footer .copyright-section.has-footer-logos .footer-logo figure{margin:0;width:180px}
+.site-footer .copyright-section.has-footer-logos .footer-logo figure a{display:inline-block}
+.site-footer .copyright-section.has-footer-logos .footer-logo figure a:hover,.site-footer .copyright-section.has-footer-logos .footer-logo figure a:focus{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
 .site-footer .copyright-section.has-footer-logos .footer-logo figure img{width:100%;height:auto}
 .social-media-links{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
 .social-media-links .social-title{width:100%}

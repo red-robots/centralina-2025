@@ -1335,6 +1335,12 @@ body:not(.home) {
         figure {
           margin: 0 0;
           width: 180px;
+          a {
+            display: inline-block;
+            &:hover, &:focus {
+              transform: translateY(-2px);
+            }
+          }
           img {
             width: 100%;
             height: auto;

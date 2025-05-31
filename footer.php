@@ -77,9 +77,16 @@
           <div class="footer-logo">
             <?php foreach ($footerLogos as $f) { 
             $img = $f['image'];
+            $website = $f['logo_website_url'];
+            $newTab = $f['logo_url_open_new_tab'];
+            $linkTarget = ($newTab) ? ' target="_blank" ':'';
             if($img) { ?>
             <figure>
-              <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+              <?php if ($website) { ?>
+                <a href="<?php echo $website ?>"<?php echo $linkTarget ?>><img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" /></a>
+              <?php } else { ?>
+                <img src="<?php echo $img['url'] ?>" alt="<?php echo $img['title'] ?>" />
+              <?php } ?>
             </figure>
             <?php } ?>
             <?php } ?>
