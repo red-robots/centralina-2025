@@ -3,6 +3,10 @@
  * Template Name: Webinars/Events
  */
 get_header(); 
+
+$paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
+$perpage = 6;
+
 ?>
 
 <main id="main" class="site-main webinars" role="main">
@@ -12,9 +16,10 @@ get_header();
     $section_title1 = get_field('section_title1');
     $intro_text1 = get_field('intro_text1');
     $post_type1 = get_field('post_type1');
+    $latest_post_id = '';
     if($post_type1) {
       $event_args = array(
-        'posts_per_page'   => 3,
+        'posts_per_page'   => 1,
         'post_type'        => $post_type1,
         'post_status'      => 'publish',
         'meta_key' => 'start_date',
@@ -26,53 +31,9 @@ get_header();
       <?php if($section_title1 || $events->have_posts()) {  ?>
       <section class="section-post-feeds post-<?php echo $post_type1 ?>">
         <div class="wrapper">
-          <div class="intro">
-            <?php if($section_title1) { ?>
-              <div class="section-title"><h2><?php echo $section_title1 ?></h2></div>
-            <?php } ?>
-            <?php if($intro_text1) { ?>
-              <div class="section-intro"><?php echo anti_email_spam($intro_text1); ?></div>
-            <?php } ?>
-          </div>
           <?php if ( $events->have_posts() ) {  ?>
             <div class="post-feeds">
-              <div class="leftCol">
-                <?php $i=1; while ( $events->have_posts() ) : $events->the_post(); 
-                  $id = get_the_ID();
-                  $thumbID = get_post_thumbnail_id($id);
-                  $img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
-                  $imgAlt = ($img) ? get_the_title($thumbID) : '';
-                  $start_date = get_field('start_date', $id);
-                  $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
-                  $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
-                  $content = ($content) ? shortenText($content, 250, ' ') : '';
-                  $excerpt = get_field('excerpt', $id);
-                  if($excerpt) {
-                    $content = $excerpt;
-                  }
-                  ?>
-                  <?php if ($i==1) { ?>
-                  <figure class="post-image">
-                    <a href="<?php echo get_permalink() ?>">
-                      <img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>">
-                    </a>
-                  </figure>
-                  <div class="details">
-                    <?php if ($start_date) { ?>
-                    <div class="event-date"><?php echo $start_date ?></div>
-                    <?php } ?>
-                    <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
-                    <?php if ( get_the_content() ) { ?>
-                    <div class="excerpt">
-                      <?php echo $content; ?>
-                    </div>
-                    <?php } ?>
-                  </div>
-                  <?php } ?>
-                <?php $i++; endwhile; wp_reset_postdata(); ?>
-              </div>
-
-              <div class="rightCol">
+              <div class="rightCol staffListCol">
                 <?php if ($staff_assigned) { ?>
                 <div class="staff-infocard">
                   <div class="card-gradient">
@@ -111,8 +72,9 @@ get_header();
                   </div>
                 </div>
                 <?php } ?>
-                <ul class="feeds">
-                <?php $n=1; while ( $events->have_posts() ) : $events->the_post(); 
+              </div>
+              <div class="leftCol latestFeedCol">
+                <?php $i=1; while ( $events->have_posts() ) : $events->the_post(); 
                   $id = get_the_ID();
                   $thumbID = get_post_thumbnail_id($id);
                   $img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
@@ -120,54 +82,126 @@ get_header();
                   $start_date = get_field('start_date', $id);
                   $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
                   $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
-                  $content = ($content) ? shortenText($content, 60, ' ') : '';
+                  $content = ($content) ? shortenText($content, 250, ' ') : '';
                   $excerpt = get_field('excerpt', $id);
                   if($excerpt) {
                     $content = $excerpt;
                   }
-                ?>
-                  <?php if ($n>1) { ?>
-                    <li class="item">
-                      <div class="inside">
-                        <?php if ($img) { ?>
-                        <figure class="post-image">
-                          <a href="<?php echo get_permalink() ?>">
-                            <img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>">
-                          </a>
-                        </figure> 
-                        <?php } ?>
-
-                        <div class="details">
-                          <?php if ($start_date) { ?>
-                          <div class="event-date"><?php echo $start_date ?></div>
-                          <?php } ?>
-                          <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
-                          <?php if ( get_the_content() ) { ?>
-                          <div class="excerpt">
-                            <?php echo $content; ?>
-                          </div>
-                          <?php } ?>
-                        </div>
-                      </div>
-                    </li>
+                  $latest_post_id = get_the_ID();
+                  ?>
+                  <?php if ($i==1) { ?>
+                  <figure class="post-image">
+                    <a href="<?php echo get_permalink() ?>">
+                      <img src="<?php echo $img[0] ?>" alt="<?php echo $imgAlt ?>">
+                    </a>
+                  </figure>
+                  <div class="details">
+                    <?php if ($start_date) { ?>
+                    <div class="event-date"><?php echo $start_date ?></div>
+                    <?php } ?>
+                    <h3><a href="<?php echo get_permalink() ?>"><?php echo get_the_title() ?></a></h3>
+                    <?php if ( get_the_content() ) { ?>
+                    <div class="excerpt">
+                      <?php echo $content; ?>
+                    </div>
+                    <?php } ?>
+                  </div>
                   <?php } ?>
-                <?php $n++; endwhile; wp_reset_postdata(); ?>
-                </ul>
+                <?php $i++; endwhile; wp_reset_postdata(); ?>
               </div>
             </div>
           <?php } ?>
         </div>
       </section>  
       <?php } ?>
+
+      <?php /*=== LATEST EVENTS ===*/ ?>
+      <?php  
+      $event_args2 = array(
+        'posts_per_page'   => $perpage,
+        'post_type'        => $post_type1,
+        'post_status'      => 'publish',
+        'meta_key'         => 'start_date',
+        'orderby'          => 'meta_value_num',
+        'order'            => 'ASC',
+        'paged'            => $paged,
+      );
+      if($latest_post_id) {
+        $event_args2['post__not_in'] = array($latest_post_id);
+      }
+      $events_listing = new WP_Query($event_args2);
+      ?>
+      <?php if ( $events_listing->have_posts() ) {  
+      $total_events_post = $events_listing->found_posts; ?>
+      <section class="section-post-feeds latest-events post-<?php echo $post_type1 ?>">
+        <div class="wrapper">
+
+          <?php if ($section_title1 || $intro_text1) { ?>
+          <div class="intro">
+            <?php if($section_title1) { ?>
+            <div class="section-title"><h2><?php echo $section_title1 ?></h2></div>
+            <?php } ?>
+            <?php if($intro_text1) { ?>
+              <div class="section-intro"><?php echo anti_email_spam($intro_text1); ?></div>
+            <?php } ?>
+          </div>
+          <?php } ?>
+
+         <div class="entries">
+          <?php $n=1; while ( $events_listing->have_posts() ) : $events_listing->the_post(); 
+            $id = get_the_ID();
+            $thumbID = get_post_thumbnail_id($id);
+            $img = ($thumbID) ? wp_get_attachment_image_src($thumbID,'large') : '';
+            $imgAlt = ($img) ? get_the_title($thumbID) : '';
+            $start_date = get_field('start_date', $id);
+            $start_date = ($start_date) ? date('F j, Y', strtotime($start_date)) : '';
+            $content = ( get_the_content() ) ? strip_tags(get_the_content()) : '';
+            $content = ($content) ? shortenText($content, 60, ' ') : '';
+            $excerpt = get_field('excerpt', $id);
+            if($excerpt) {
+              $content = $excerpt;
+            }
+            ?>
+            <div class="entry">
+              <?php if ($img) { ?>
+              <figure>
+                <?php echo get_the_post_thumbnail($id) ?>
+              </figure>  
+              <?php } ?>
+              <div class="details">
+                <?php if ($start_date) { ?>
+                <div class="event-date"><?php echo $start_date ?></div>
+                <?php } ?>
+                <h3 class="event-name"><?php echo get_the_title() ?></h3>
+                <div class="button-wrap">
+                  <a href="<?php echo get_permalink() ?>" class="button-outline-blue button-watch">Learn More</a>
+                </div>
+              </div>
+            </div>
+          <?php $n++; endwhile; wp_reset_postdata(); ?>
+          </div>
+        </div>
+        <div id="hiddenEntriesEvents" style="display:none"></div>
+        <?php if ($total_events_post > $perpage) {  
+          $total_events_pages = ceil($total_events_post / $perpage);
+        ?>
+        <div class="load-more">
+          <button class="more-button btn-solid" id="loadMoreBtn1" data-baseurl="<?php echo get_permalink(); ?>" data-next="2" data-total-pages="<?php echo $total_events_pages ?>">Load More</button>
+        </div>
+        <?php } ?>
+      </section>
+      <?php } ?>
     <?php } ?>
+
+    
 
 
     <?php  
+    /*=== WEBINARS ===*/
     $section_title2 = get_field('section_title2');
     $intro_text2 = get_field('intro_text2');
     $post_type2 = get_field('post_type2');
-    $paged = ( get_query_var( 'pg' ) ) ? absint( get_query_var( 'pg' ) ) : 1;
-    $perpage = 6;
+    
     if($post_type2) {
       $webinar_args = array(
         'posts_per_page'   => $perpage,
@@ -313,6 +347,30 @@ jQuery(document).ready(function($){
         if( $('#hiddenEntries .webinar').length ) {
           $('#hiddenEntries .webinar').each(function(){
             $(this).addClass('fadeIn').appendTo('.webinar-container .webinars');
+          });
+        }
+      });
+    }
+    if(nextNum>total) {
+        moreBtn.parent().hide();
+    }    
+  });
+
+  $(document).on('click', '#loadMoreBtn1', function(e){
+    e.preventDefault();
+    var moreBtn = $(this);
+    var d = new Date();
+    var baseUrl = $(this).attr('data-baseurl');
+    var next = parseInt( $(this).attr('data-next') );
+    var nextNum = next+1;
+    var total = parseInt( $(this).attr('data-total-pages') );
+    var nextPageUrl = baseUrl + '?pg=' + next;
+    moreBtn.attr('data-next', nextNum);
+    if(total >= next) {
+      $('#hiddenEntriesEvents').load(nextPageUrl+' .entries .entry', function(data){
+        if( $('#hiddenEntriesEvents .entry').length ) {
+          $('#hiddenEntriesEvents .entry').each(function(){
+            $(this).addClass('fadeIn').appendTo('.latest-events .entries');
           });
         }
       });
